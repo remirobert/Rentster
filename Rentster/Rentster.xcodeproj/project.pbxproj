@@ -14,6 +14,7 @@
 		87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87702A781BBE324E00FD8713 /* LaunchScreen.storyboard */; };
 		87702A851BBE324E00FD8713 /* RentsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A841BBE324E00FD8713 /* RentsterTests.swift */; };
 		87702A901BBE324E00FD8713 /* RentsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A8F1BBE324E00FD8713 /* RentsterUITests.swift */; };
+		BB8FF5671BBEA9E900C68647 /* RSMessagesControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		87702A8F1BBE324E00FD8713 /* RentsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentsterUITests.swift; sourceTree = "<group>"; };
 		87702A911BBE324E00FD8713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB7046CA378E6A0BEA12E00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSMessagesControllerViewController.swift; sourceTree = "<group>"; };
 		C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,8 @@
 		87702A6E1BBE324E00FD8713 /* Rentster */ = {
 			isa = PBXGroup;
 			children = (
+				BB8FF56A1BBEB37D00C68647 /* Models */,
+				BB8FF5651BBEA9DC00C68647 /* Controllers */,
 				BB95D99A1BBEA7D000F7F6E9 /* Application */,
 			);
 			path = Rentster;
@@ -140,6 +144,21 @@
 				87702A911BBE324E00FD8713 /* Info.plist */,
 			);
 			path = RentsterUITests;
+			sourceTree = "<group>";
+		};
+		BB8FF5651BBEA9DC00C68647 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BB8FF56A1BBEB37D00C68647 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		BB95D99A1BBEA7D000F7F6E9 /* Application */ = {
@@ -338,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB8FF5671BBEA9E900C68647 /* RSMessagesControllerViewController.swift in Sources */,
 				87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
