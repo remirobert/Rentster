@@ -14,6 +14,9 @@
 		87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87702A781BBE324E00FD8713 /* LaunchScreen.storyboard */; };
 		87702A851BBE324E00FD8713 /* RentsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A841BBE324E00FD8713 /* RentsterTests.swift */; };
 		87702A901BBE324E00FD8713 /* RentsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A8F1BBE324E00FD8713 /* RentsterUITests.swift */; };
+		87FD7C091BC0527F00F2ACE3 /* BROptionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C061BC0527F00F2ACE3 /* BROptionItem.m */; settings = {ASSET_TAGS = (); }; };
+		87FD7C0A1BC0527F00F2ACE3 /* BROptionsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C081BC0527F00F2ACE3 /* BROptionsButton.m */; settings = {ASSET_TAGS = (); }; };
+		87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB8FF5671BBEA9E900C68647 /* RSMessagesControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,12 @@
 		87702A8B1BBE324E00FD8713 /* RentsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RentsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87702A8F1BBE324E00FD8713 /* RentsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentsterUITests.swift; sourceTree = "<group>"; };
 		87702A911BBE324E00FD8713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87FD7C041BC0527F00F2ACE3 /* Rentster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rentster-Bridging-Header.h"; sourceTree = "<group>"; };
+		87FD7C051BC0527F00F2ACE3 /* BROptionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BROptionItem.h; path = BROptionsButton/BROptionItem.h; sourceTree = SOURCE_ROOT; };
+		87FD7C061BC0527F00F2ACE3 /* BROptionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BROptionItem.m; path = BROptionsButton/BROptionItem.m; sourceTree = SOURCE_ROOT; };
+		87FD7C071BC0527F00F2ACE3 /* BROptionsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BROptionsButton.h; path = BROptionsButton/BROptionsButton.h; sourceTree = SOURCE_ROOT; };
+		87FD7C081BC0527F00F2ACE3 /* BROptionsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BROptionsButton.m; path = BROptionsButton/BROptionsButton.m; sourceTree = SOURCE_ROOT; };
+		87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSTabBarController.swift; sourceTree = "<group>"; };
 		8BB7046CA378E6A0BEA12E00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSMessagesControllerViewController.swift; sourceTree = "<group>"; };
 		C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,9 +130,11 @@
 		87702A6E1BBE324E00FD8713 /* Rentster */ = {
 			isa = PBXGroup;
 			children = (
+				87FD7C0B1BC052A600F2ACE3 /* BROptionsButton */,
 				BB8FF56A1BBEB37D00C68647 /* Models */,
 				BB8FF5651BBEA9DC00C68647 /* Controllers */,
 				BB95D99A1BBEA7D000F7F6E9 /* Application */,
+				87FD7C041BC0527F00F2ACE3 /* Rentster-Bridging-Header.h */,
 			);
 			path = Rentster;
 			sourceTree = "<group>";
@@ -146,9 +157,21 @@
 			path = RentsterUITests;
 			sourceTree = "<group>";
 		};
+		87FD7C0B1BC052A600F2ACE3 /* BROptionsButton */ = {
+			isa = PBXGroup;
+			children = (
+				87FD7C051BC0527F00F2ACE3 /* BROptionItem.h */,
+				87FD7C061BC0527F00F2ACE3 /* BROptionItem.m */,
+				87FD7C071BC0527F00F2ACE3 /* BROptionsButton.h */,
+				87FD7C081BC0527F00F2ACE3 /* BROptionsButton.m */,
+			);
+			name = BROptionsButton;
+			sourceTree = "<group>";
+		};
 		BB8FF5651BBEA9DC00C68647 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */,
 				BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */,
 			);
 			name = Controllers;
@@ -238,6 +261,7 @@
 		87702A641BBE324E00FD8713 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Shepard Wang";
 				TargetAttributes = {
@@ -357,7 +381,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87FD7C0A1BC0527F00F2ACE3 /* BROptionsButton.m in Sources */,
+				87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */,
 				BB8FF5671BBEA9E900C68647 /* RSMessagesControllerViewController.swift in Sources */,
+				87FD7C091BC0527F00F2ACE3 /* BROptionItem.m in Sources */,
 				87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,10 +526,13 @@
 			baseConfigurationReference = C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Rentster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rentster.Rentster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Rentster/Rentster-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -511,10 +541,12 @@
 			baseConfigurationReference = 8BB7046CA378E6A0BEA12E00 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Rentster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rentster.Rentster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Rentster/Rentster-Bridging-Header.h";
 			};
 			name = Release;
 		};
