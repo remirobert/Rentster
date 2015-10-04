@@ -215,6 +215,26 @@
     [_delegate brToDo];
 }
 
+- (void) flip{
+    CGPoint openedCenter = self.openedStateImage.center;
+    CGPoint closedCenter = self.closedStateImage.center;
+    CGFloat animationDelay = 0.05;
+    openedCenter.y = CGRectGetMidY(self.bounds);
+    closedCenter.y = openedCenter.y + (self.openedStateImage.frame.size.height * 2);
+    
+    self.enabled = NO;
+    [UIView animateWithDuration:0.4 delay:animationDelay usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            
+            self.closedStateImage.center = closedCenter;
+            self.openedStateImage.center = openedCenter;
+            
+        } completion:^(BOOL finished) {
+            NSLog(@"finished");
+            self.enabled = YES;
+        }];
+
+}
+
 #pragma mark - Action
 
 - (void)buttonPressed {

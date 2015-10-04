@@ -22,6 +22,7 @@ class RSTabBarController: UITabBarController ,  BROptionButtonDelegate{
         brOption.setImage(UIImage(named: "Apple"), forBROptionsButtonState: BROptionsButtonStateNormal)
         brOption.setImage(UIImage(named: "Apple"), forBROptionsButtonState: BROptionsButtonStateOpened)
         // Do any additional setup after loading the view.
+        brOption.flip()
     }
 
     override func didReceiveMemoryWarning() {

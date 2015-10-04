@@ -16,5 +16,4 @@ extern const CGFloat kBROptionsItemDefaultItemHeight;
 @property (nonatomic, readonly) NSInteger index;
 @property (nonatomic, assign) CGPoint defaultLocation;
 - (instancetype)initWithIndex:(NSInteger)index;
-
 @end

@@ -14,6 +14,7 @@
 		87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87702A781BBE324E00FD8713 /* LaunchScreen.storyboard */; };
 		87702A851BBE324E00FD8713 /* RentsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A841BBE324E00FD8713 /* RentsterTests.swift */; };
 		87702A901BBE324E00FD8713 /* RentsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A8F1BBE324E00FD8713 /* RentsterUITests.swift */; };
+		87893B7D1BC0EA4F00DD0EF8 /* RSHomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87893B7C1BC0EA4F00DD0EF8 /* RSHomePageController.swift */; settings = {ASSET_TAGS = (); }; };
 		87FD7C091BC0527F00F2ACE3 /* BROptionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C061BC0527F00F2ACE3 /* BROptionItem.m */; settings = {ASSET_TAGS = (); }; };
 		87FD7C0A1BC0527F00F2ACE3 /* BROptionsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C081BC0527F00F2ACE3 /* BROptionsButton.m */; settings = {ASSET_TAGS = (); }; };
 		87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -51,6 +52,7 @@
 		87702A8B1BBE324E00FD8713 /* RentsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RentsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87702A8F1BBE324E00FD8713 /* RentsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentsterUITests.swift; sourceTree = "<group>"; };
 		87702A911BBE324E00FD8713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87893B7C1BC0EA4F00DD0EF8 /* RSHomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSHomePageController.swift; sourceTree = "<group>"; };
 		87FD7C041BC0527F00F2ACE3 /* Rentster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rentster-Bridging-Header.h"; sourceTree = "<group>"; };
 		87FD7C051BC0527F00F2ACE3 /* BROptionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BROptionItem.h; path = BROptionsButton/BROptionItem.h; sourceTree = SOURCE_ROOT; };
 		87FD7C061BC0527F00F2ACE3 /* BROptionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BROptionItem.m; path = BROptionsButton/BROptionItem.m; sourceTree = SOURCE_ROOT; };
@@ -173,6 +175,7 @@
 			children = (
 				87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */,
 				BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */,
+				87893B7C1BC0EA4F00DD0EF8 /* RSHomePageController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			files = (
 				87FD7C0A1BC0527F00F2ACE3 /* BROptionsButton.m in Sources */,
 				87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */,
+				87893B7D1BC0EA4F00DD0EF8 /* RSHomePageController.swift in Sources */,
 				BB8FF5671BBEA9E900C68647 /* RSMessagesControllerViewController.swift in Sources */,
 				87FD7C091BC0527F00F2ACE3 /* BROptionItem.m in Sources */,
 				87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */,

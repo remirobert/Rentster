@@ -64,6 +64,8 @@ typedef enum {
  * and for the close state (Apple logo in the demo)
  */
 - (void)setImage:(UIImage *)image forBROptionsButtonState:(BROptionsButtonState)state;
+
+- (void)flip;
 @end
 
 
