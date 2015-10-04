@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="17" y="587"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Page Controller-->
         <scene sceneID="AKz-8p-ELJ">
             <objects>
-                <viewController id="gQP-eF-hze" sceneMemberID="viewController">
+                <viewController id="gQP-eF-hze" customClass="RSHomePageController" customModule="Rentster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="83n-1J-GGg"/>
                         <viewControllerLayoutGuide type="bottom" id="zhK-ru-9Fj"/>

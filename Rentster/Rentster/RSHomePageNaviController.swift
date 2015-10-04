@@ -1,5 +1,5 @@
 //
-//  RSHomePageController.swift
+//  RSHomePageNaviController.swift
 //  Rentster
 //
 //  Created by Shepard Wang on 15/10/4.
@@ -8,18 +8,29 @@
 
 import UIKit
 
-class RSHomePageController: UIViewController , UISearchBarDelegate{
+class RSHomePageNaviController: UINavigationController ,UISearchBarDelegate{
 
-    lazy  var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
-        searchBar.placeholder = "Search"
+//        var searchBar = UISearchBar(frame: CGRectMake(500,0,250,44))
+//        searchBar.delegate = self
+//        searchBar.placeholder = "Search"
+//        searchBar.backgroundColor = UIColor.redColor()
+//        
+//        var searchView = UIView(frame: CGRectMake(0, 0, 768, 44))
+//        searchView.backgroundColor = UIColor.blueColor()
+//        searchView.addSubview(searchBar)
+//        
+//        self.navigationItem.titleView = searchView
+        var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
+//        var leftNavBarButton = UIBarButtonItem(customView:searchBar)
+//        self.navigationItem.leftBarButtonItem = leftNavBarButton
+        
+        searchBar.placeholder = "Your placeholder"
         var leftNavBarButton = UIBarButtonItem(customView:searchBar)
         self.navigationItem.leftBarButtonItem = leftNavBarButton
-        
     }
 
     override func didReceiveMemoryWarning() {
