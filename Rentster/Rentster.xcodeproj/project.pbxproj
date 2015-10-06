@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		061E1B6628FCAA28DBB02982 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72652D508BE7F85647DDFF22 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		874EA91F1BC4469800B67E63 /* HomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874EA91D1BC4469800B67E63 /* HomePageCell.swift */; settings = {ASSET_TAGS = (); }; };
+		874EA9201BC4469800B67E63 /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 874EA91E1BC4469800B67E63 /* HomePageCell.xib */; settings = {ASSET_TAGS = (); }; };
 		87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A6F1BBE324E00FD8713 /* AppDelegate.swift */; };
 		87702A751BBE324E00FD8713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87702A731BBE324E00FD8713 /* Main.storyboard */; };
 		87702A771BBE324E00FD8713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87702A761BBE324E00FD8713 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		72652D508BE7F85647DDFF22 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		874EA91D1BC4469800B67E63 /* HomePageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageCell.swift; sourceTree = "<group>"; };
+		874EA91E1BC4469800B67E63 /* HomePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
 		87702A6C1BBE324E00FD8713 /* Rentster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rentster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87702A6F1BBE324E00FD8713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87702A741BBE324E00FD8713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		874EA91A1BC4436000B67E63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				874EA91D1BC4469800B67E63 /* HomePageCell.swift */,
+				874EA91E1BC4469800B67E63 /* HomePageCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		87702A631BBE324E00FD8713 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +145,7 @@
 		87702A6E1BBE324E00FD8713 /* Rentster */ = {
 			isa = PBXGroup;
 			children = (
+				874EA91A1BC4436000B67E63 /* View */,
 				87FD7C0B1BC052A600F2ACE3 /* BROptionsButton */,
 				BB8FF56A1BBEB37D00C68647 /* Models */,
 				BB8FF5651BBEA9DC00C68647 /* Controllers */,
@@ -312,6 +326,7 @@
 				87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */,
 				87702A771BBE324E00FD8713 /* Assets.xcassets in Resources */,
 				87702A751BBE324E00FD8713 /* Main.storyboard in Resources */,
+				874EA9201BC4469800B67E63 /* HomePageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +404,7 @@
 				87893B7D1BC0EA4F00DD0EF8 /* RSHomePageController.swift in Sources */,
 				BB8FF5671BBEA9E900C68647 /* RSMessagesControllerViewController.swift in Sources */,
 				87FD7C091BC0527F00F2ACE3 /* BROptionItem.m in Sources */,
+				874EA91F1BC4469800B67E63 /* HomePageCell.swift in Sources */,
 				87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,8 +8,9 @@
 
 import UIKit
 
-class RSHomePageController: UIViewController , UISearchBarDelegate {
+class RSHomePageController: UIViewController , UISearchBarDelegate , UITableViewDataSource , UITableViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tableView: UITableView!
 
     lazy  var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
     
@@ -21,7 +22,8 @@ class RSHomePageController: UIViewController , UISearchBarDelegate {
         let leftNavBarButton = UIBarButtonItem(customView:searchBar)
         self.navigationItem.leftBarButtonItem = leftNavBarButton
         setupScrollView()
-        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func setupScrollView() {
@@ -38,6 +40,9 @@ class RSHomePageController: UIViewController , UISearchBarDelegate {
         scrollView.contentSize = myView.frame.size
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
+        
+        let nib = UINib(nibName: "HomePageCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "HomePageCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +50,7 @@ class RSHomePageController: UIViewController , UISearchBarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 
@@ -55,5 +60,14 @@ class RSHomePageController: UIViewController , UISearchBarDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomePageCell", forIndexPath: indexPath)
+        return cell
+    }
+    
 }

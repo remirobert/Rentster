@@ -68,10 +68,20 @@
                                 <rect key="frame" x="14" y="122" width="572" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zhy-uV-cMi">
-                                <rect key="frame" x="7" y="200" width="585" height="343"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="315" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zhy-uV-cMi">
+                                <rect key="frame" x="7" y="200" width="585" height="330"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="315" id="hgK-gj-Vdg">
+                                        <rect key="frame" x="0.0" y="28" width="585" height="315"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hgK-gj-Vdg" id="tDW-Cm-sey">
+                                            <rect key="frame" x="0.0" y="0.0" width="585" height="314"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -91,6 +101,7 @@
                     <navigationItem key="navigationItem" id="lWp-8f-BCt"/>
                     <connections>
                         <outlet property="scrollView" destination="dcw-Up-Quj" id="bzV-Cg-IAL"/>
+                        <outlet property="tableView" destination="Zhy-uV-cMi" id="S1A-Ba-4M5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQm-zx-bga" userLabel="First Responder" sceneMemberID="firstResponder"/>
