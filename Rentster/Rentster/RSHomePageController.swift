@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RSHomePageController: UIViewController , UISearchBarDelegate{
+class RSHomePageController: UIViewController , UISearchBarDelegate {
+    @IBOutlet weak var scrollView: UIScrollView!
 
     lazy  var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
     
@@ -17,9 +18,26 @@ class RSHomePageController: UIViewController , UISearchBarDelegate{
         
         // Do any additional setup after loading the view.
         searchBar.placeholder = "Search"
-        var leftNavBarButton = UIBarButtonItem(customView:searchBar)
+        let leftNavBarButton = UIBarButtonItem(customView:searchBar)
         self.navigationItem.leftBarButtonItem = leftNavBarButton
+        setupScrollView()
         
+    }
+    
+    func setupScrollView() {
+        let myView = UIView(frame: CGRectMake(0, 0, 580, 70))
+        myView.backgroundColor = UIColor.clearColor()
+        for(var i = 0 ; i<8 ; i++){
+            let button = UIButton(frame: CGRectMake(CGFloat(i * 70)+15, 5 , 60, 60))
+            button.setTitle("Btn\(i+1)", forState: UIControlState.Normal)
+            button.titleLabel?.textColor = UIColor.blackColor()
+            button.backgroundColor = UIColor.blueColor()
+            myView.addSubview(button)
+        }
+        scrollView.addSubview(myView)
+        scrollView.contentSize = myView.frame.size
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
     }
 
     override func didReceiveMemoryWarning() {
