@@ -41,8 +41,8 @@ class RSHomePageController: UIViewController , UISearchBarDelegate , UITableView
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         
-        let nib = UINib(nibName: "HomePageCell", bundle: nil)
-        self.tableView.registerNib(nib, forCellReuseIdentifier: "HomePageCell")
+        let nib = UINib(nibName: "RSHomePageCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "RSHomePageCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,8 +66,14 @@ class RSHomePageController: UIViewController , UISearchBarDelegate , UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HomePageCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("RSHomePageCell", forIndexPath: indexPath) as! RSHomePageCell
+        cell.cellImage.image = UIImage(named: "pic\(indexPath.row)")
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 300
     }
     
 }

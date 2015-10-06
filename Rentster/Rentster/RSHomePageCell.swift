@@ -1,5 +1,5 @@
 //
-//  HomePageCell.swift
+//  RSHomePageCell.swift
 //  Rentster
 //
 //  Created by Shepard Wang on 15/10/7.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class HomePageCell: UITableViewCell {
+class RSHomePageCell: UITableViewCell {
 
+    @IBOutlet weak var cellImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
