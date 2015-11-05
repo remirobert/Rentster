@@ -69,6 +69,10 @@ class RSItemController: UIViewController {
         scrollView.contentSize = CGRectMake(0, 0, scrollWidth, 970).size
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
+//        scrollView.showsHorizontalScrollIndicator = false
+//        scrollView.showsVerticalScrollIndicator = false
+//        scrollView.showsHorizontalScrollIndicator = false
+//        scrollView.showsVerticalScrollIndicator = false
     }
 
     override func didReceiveMemoryWarning() {
