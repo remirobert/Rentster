@@ -31,7 +31,7 @@
         <!--Home Page Controller-->
         <scene sceneID="AKz-8p-ELJ">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="gQP-eF-hze" customClass="RSHomePageController" customModule="Rentster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gQP-eF-hze" customClass="RSHomePageController" customModule="Rentster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="83n-1J-GGg"/>
                         <viewControllerLayoutGuide type="bottom" id="zhK-ru-9Fj"/>
@@ -100,7 +100,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQm-zx-bga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2029" y="-230"/>
+            <point key="canvasLocation" x="2801" y="-289"/>
+        </scene>
+        <!--Item Controller-->
+        <scene sceneID="3yZ-ma-uPB">
+            <objects>
+                <viewController storyboardIdentifier="ItemController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w6B-Qi-8Dh" customClass="RSItemController" customModule="Rentster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hD4-AZ-VBq"/>
+                        <viewControllerLayoutGuide type="bottom" id="gb3-pk-cpX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9ue-vY-16Y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIW-U7-hjA">
+                                <rect key="frame" x="151" y="223" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.85994712750000002" green="0.84265744499999995" blue="0.70328111110000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gb3-pk-cpX" firstAttribute="top" secondItem="QIW-U7-hjA" secondAttribute="bottom" id="UVJ-KL-TBD"/>
+                            <constraint firstItem="QIW-U7-hjA" firstAttribute="top" secondItem="hD4-AZ-VBq" secondAttribute="bottom" constant="-25" id="Xht-z1-UTk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QIW-U7-hjA" secondAttribute="trailing" id="nMr-Xa-g1B"/>
+                            <constraint firstItem="QIW-U7-hjA" firstAttribute="leading" secondItem="9ue-vY-16Y" secondAttribute="leadingMargin" id="yHB-wN-7Vk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="QIW-U7-hjA" id="rrQ-Ev-FHF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bLB-TZ-pik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3445" y="-289"/>
         </scene>
         <!--Message-->
         <scene sceneID="CzV-rv-48x">
@@ -203,12 +238,32 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="gQP-eF-hze" kind="relationship" relationship="rootViewController" id="Wm9-EM-rko"/>
+                        <segue destination="7UK-PC-0x7" kind="relationship" relationship="rootViewController" id="Wm9-EM-rko"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXe-g9-bBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1124" y="-299"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AdG-zJ-KJi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="7UK-PC-0x7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Fwr-sR-jMT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="44t-k1-ezB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gQP-eF-hze" kind="relationship" relationship="rootViewController" id="Feu-LR-YCG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u1z-vK-i6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1989" y="-289"/>
         </scene>
     </scenes>
     <resources>

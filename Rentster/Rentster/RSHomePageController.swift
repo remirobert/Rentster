@@ -12,16 +12,17 @@ class RSHomePageController: UIViewController , UISearchBarDelegate , UITableView
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
 
-    lazy  var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, 20))
+//    lazy  var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width-40, 20))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        searchBar.placeholder = "Search"
-        let leftNavBarButton = UIBarButtonItem(customView:searchBar)
-        self.navigationItem.leftBarButtonItem = leftNavBarButton
+//        searchBar.placeholder = "Search"
+//        let leftNavBarButton = UIBarButtonItem(customView:searchBar)
+//        self.navigationItem.leftBarButtonItem = leftNavBarButton
 //        setupScrollView()
+        //add search bar
         
         let nib = UINib(nibName: "RSHomePageCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "RSHomePageCell")
@@ -64,6 +65,10 @@ class RSHomePageController: UIViewController , UISearchBarDelegate , UITableView
         // Pass the selected object to the new view controller.
     }
     */
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let item = (self.storyboard?.instantiateViewControllerWithIdentifier("ItemController")) as! RSItemController
+        self.navigationController?.pushViewController(item, animated: true)
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
