@@ -20,7 +20,7 @@ class RSItemController: UIViewController {
         super.viewDidLoad()
         self.title = "Item Detail"
         
-        let itemImage = UIImage(named: "pic0")
+        let itemImage = UIImage(named: "bicycle")
         let picHeight = itemImage!.size.height * CGFloat(scrollWidth) / itemImage!.size.width
         let itemPicView = UIImageView(frame: CGRectMake(20, 0 , scrollWidth-40 , picHeight))
         itemPicView.image = itemImage

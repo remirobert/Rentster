@@ -55,6 +55,9 @@ class RSHomePageController: UIViewController , UISearchBarDelegate , UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addItem(sender: AnyObject) {
+        
+    }
     
     /*
     // MARK: - Navigation

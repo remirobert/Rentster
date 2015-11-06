@@ -82,6 +82,9 @@
                                     <constraint firstAttribute="width" constant="60" id="ahQ-iy-1SX"/>
                                 </constraints>
                                 <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="addItem:" destination="gQP-eF-hze" eventType="touchUpInside" id="Opj-BE-Tt0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
