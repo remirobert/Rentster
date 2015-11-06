@@ -118,8 +118,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIW-U7-hjA">
-                                <rect key="frame" x="36" y="0.0" width="471" height="600"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIW-U7-hjA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
@@ -127,10 +127,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="QIW-U7-hjA" secondAttribute="trailing" id="3Ge-sE-oip"/>
-                            <constraint firstItem="QIW-U7-hjA" firstAttribute="top" secondItem="9ue-vY-16Y" secondAttribute="top" id="JOR-Al-eNE"/>
-                            <constraint firstItem="QIW-U7-hjA" firstAttribute="leading" secondItem="9ue-vY-16Y" secondAttribute="leadingMargin" id="KVc-N9-gw2"/>
-                            <constraint firstItem="QIW-U7-hjA" firstAttribute="bottom" secondItem="gb3-pk-cpX" secondAttribute="top" id="xJF-lv-eRT"/>
+                            <constraint firstItem="QIW-U7-hjA" firstAttribute="bottom" secondItem="gb3-pk-cpX" secondAttribute="top" id="JZb-To-4Hl"/>
+                            <constraint firstItem="QIW-U7-hjA" firstAttribute="top" secondItem="9ue-vY-16Y" secondAttribute="top" id="RhJ-65-fJx"/>
+                            <constraint firstItem="QIW-U7-hjA" firstAttribute="leading" secondItem="9ue-vY-16Y" secondAttribute="leading" id="lqk-Ny-5EU"/>
+                            <constraint firstAttribute="trailing" secondItem="QIW-U7-hjA" secondAttribute="trailing" id="tfh-J6-KLc"/>
                         </constraints>
                     </view>
                     <connections>

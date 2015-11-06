@@ -12,7 +12,7 @@ class RSItemController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
-    let scrollWidth = UIScreen.mainScreen().bounds.width-40
+    let scrollWidth = UIScreen.mainScreen().bounds.width
     var currentY:CGFloat = 0
     //i dont know why, we need to set the Y of CGRect to -65 to let it lie on the top
     
@@ -22,7 +22,7 @@ class RSItemController: UIViewController {
         
         let itemImage = UIImage(named: "pic0")
         let picHeight = itemImage!.size.height * CGFloat(scrollWidth) / itemImage!.size.width
-        let itemPicView = UIImageView(frame: CGRectMake(0, 0 , scrollWidth , picHeight))
+        let itemPicView = UIImageView(frame: CGRectMake(20, 0 , scrollWidth-40 , picHeight))
         itemPicView.image = itemImage
         scrollView.addSubview(itemPicView)
     
@@ -42,7 +42,7 @@ class RSItemController: UIViewController {
         nameLabel.font = UIFont.systemFontOfSize(42)
         let maxSize = CGSize(width: scrollWidth , height: 2000)
         var actualSize = nameLabel.sizeThatFits(maxSize)
-        nameLabel.frame = CGRectMake(0, CGFloat(currentY), actualSize.width , actualSize.height)
+        nameLabel.frame = CGRectMake(20, CGFloat(currentY), actualSize.width , actualSize.height)
         scrollView.addSubview(nameLabel)
         currentY += actualSize.height
         
@@ -53,7 +53,7 @@ class RSItemController: UIViewController {
         priceLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         priceLabel.font = UIFont.systemFontOfSize(30)
         actualSize = priceLabel.sizeThatFits(maxSize)
-        priceLabel.frame = CGRectMake(0, CGFloat(currentY), actualSize.width , actualSize.height)
+        priceLabel.frame = CGRectMake(20, CGFloat(currentY), actualSize.width , actualSize.height)
         scrollView.addSubview(priceLabel)
         currentY += actualSize.height
         
@@ -63,7 +63,7 @@ class RSItemController: UIViewController {
         safetyLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         safetyLabel.font = UIFont.systemFontOfSize(19)
         actualSize = safetyLabel.sizeThatFits(maxSize)
-        safetyLabel.frame = CGRectMake(0, CGFloat(currentY), actualSize.width , actualSize.height)
+        safetyLabel.frame = CGRectMake(20, CGFloat(currentY), actualSize.width , actualSize.height)
         safetyLabel.textColor = UIColor.lightGrayColor()
         scrollView.addSubview(safetyLabel)
         
@@ -73,14 +73,14 @@ class RSItemController: UIViewController {
         safetyNumberLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         safetyNumberLabel.font = UIFont.systemFontOfSize(19)
         actualSize = safetyNumberLabel.sizeThatFits(maxSize)
-        safetyNumberLabel.frame = CGRectMake(safetyLabel.frame.width+5, CGFloat(currentY), actualSize.width , actualSize.height)
+        safetyNumberLabel.frame = CGRectMake(safetyLabel.frame.width+25, CGFloat(currentY), actualSize.width , actualSize.height)
         safetyNumberLabel.textColor = UIColor.lightGrayColor()
         scrollView.addSubview(safetyNumberLabel)
         currentY += actualSize.height
         
         currentY += 4
-        var line1 = UIView(frame: CGRectMake(0, currentY, scrollWidth, 1))
-        line1.backgroundColor = UIColor.lightGrayColor()
+        var line1 = UIView(frame: CGRectMake(20, currentY, scrollWidth, 1))
+        line1.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
         scrollView.addSubview(line1)
         currentY += 8
         
@@ -103,8 +103,8 @@ class RSItemController: UIViewController {
         dropLabel.frame = CGRectMake(scrollWidth/2, CGFloat(currentY), scrollWidth/2 , actualSize.height)
         scrollView.addSubview(dropLabel)
         
-        let line2 = UIView(frame: CGRectMake(scrollWidth/2, currentY, 1, actualSize.height * 2))
-        line2.backgroundColor = UIColor.lightGrayColor()
+        let line2 = UIView(frame: CGRectMake(scrollWidth/2, currentY, 1, actualSize.height))
+        line2.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
         scrollView.addSubview(line2)
         currentY += actualSize.height
         
@@ -128,13 +128,18 @@ class RSItemController: UIViewController {
         dropDateLabel.textAlignment = NSTextAlignment.Center
         dropDateLabel.frame = CGRectMake(scrollWidth/2, CGFloat(currentY), scrollWidth/2 , actualSize.height)
         scrollView.addSubview(dropDateLabel)
+        
+        let line3 = UIView(frame: CGRectMake(scrollWidth/2, currentY, 1, actualSize.height))
+        line3.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+        scrollView.addSubview(line3)
         currentY += actualSize.height
+    
         
         currentY += 3
         
-        let line3 = UIView(frame: CGRectMake(-30, currentY, scrollWidth+60, 7))
-        line3.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
-        scrollView.addSubview(line3)
+        let line4 = UIView(frame: CGRectMake(0, currentY, scrollWidth, 7))
+        line4.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+        scrollView.addSubview(line4)
         currentY += 20
         
         let detailKeys = ["Condition","Quantity","EAN","Case","UPC","Band Material","MPN","Band Color","Brand","Metal","Model"]
@@ -146,7 +151,7 @@ class RSItemController: UIViewController {
             detailKeyLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
             detailKeyLabel.font = UIFont.systemFontOfSize(19)
             actualSize = detailKeyLabel.sizeThatFits(maxSize)
-            detailKeyLabel.frame = CGRectMake(0, CGFloat(currentY), actualSize.width , actualSize.height)
+            detailKeyLabel.frame = CGRectMake(20, CGFloat(currentY), actualSize.width , actualSize.height)
             detailKeyLabel.textColor = UIColor.lightGrayColor()
             scrollView.addSubview(detailKeyLabel)
             
@@ -163,17 +168,41 @@ class RSItemController: UIViewController {
             currentY += actualSize.height + 8
         }
         
+        let aboutLabel = UILabel(frame: CGRectMake(0, currentY, scrollWidth, 40))
+        aboutLabel.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+        aboutLabel.text = "    About the Renter"
+        aboutLabel.font = UIFont.systemFontOfSize(19)
+        scrollView.addSubview(aboutLabel)
+        currentY += aboutLabel.frame.height
         
-        scrollView.contentSize = CGRectMake(0, 0, scrollWidth, currentY+970).size
+        let contactKeys = ["Wechat","Phone Number","Email"]
+        for(var i=0 ; i < contactKeys.count ; i = i + 1 ){
+            let contactButton = UIButton(frame: CGRectMake(20, currentY, scrollWidth, 45))
+            contactButton.setTitle(contactKeys[i], forState: UIControlState.Normal)
+            contactButton.titleLabel?.font = UIFont.systemFontOfSize(19)
+//            contactButton.titleLabel?.textAlignment = NSTextAlignment.Left
+            contactButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            contactButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+            contactButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+            
+            contactButton.addTarget(self, action: Selector("touchContact:") , forControlEvents: UIControlEvents.TouchUpInside)
+            
+            scrollView.addSubview(contactButton)
+            currentY += contactButton.frame.height
+            
+            var line = UIView(frame: CGRectMake(0, currentY, scrollWidth, 1))
+            line.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+            scrollView.addSubview(line)
+        }
+        
+        scrollView.contentSize = CGRectMake(0, 0, scrollWidth, currentY).size
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
-//        scrollView.showsHorizontalScrollIndicator = false
-//        scrollView.showsVerticalScrollIndicator = false
-//        scrollView.showsHorizontalScrollIndicator = false
-//        scrollView.showsVerticalScrollIndicator = false
     }
 
-    
+    func touchContact(button:UIButton) {
+        print(button.titleLabel?.text)
+    }
 
     /*
     // MARK: - Navigation
