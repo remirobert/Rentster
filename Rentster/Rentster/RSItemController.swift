@@ -13,28 +13,19 @@ class RSItemController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     let scrollWidth = UIScreen.mainScreen().bounds.width-40
-    let topBase:CGFloat = -65
     var currentY:CGFloat = 0
     //i dont know why, we need to set the Y of CGRect to -65 to let it lie on the top
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentY = topBase
-        // Do any additional setup after loading the view.
-        //        these are for catalog
-//        for(var i = 0 ; i<1 ; i++){
-//            var itemPicView = UIImageView(frame: CGRectMake(0, scrollWidth*3/4 * CGFloat(i) + CGFloat(topBase), scrollWidth , scrollWidth*3/4))
-//            itemPicView.contentMode = UIViewContentMode.ScaleAspectFill
-//            itemPicView.image = UIImage(named: "pic0")
-//            scrollView.addSubview(itemPicView)
-//        }
+        self.title = "Item Detail"
         
         let itemImage = UIImage(named: "pic0")
         let picHeight = itemImage!.size.height * CGFloat(scrollWidth) / itemImage!.size.width
-        let itemPicView = UIImageView(frame: CGRectMake(0, CGFloat(topBase), scrollWidth , picHeight))
-//        itemPicView.contentMode = UIViewContentMode.ScaleAspectFill
+        let itemPicView = UIImageView(frame: CGRectMake(0, 0 , scrollWidth , picHeight))
         itemPicView.image = itemImage
         scrollView.addSubview(itemPicView)
+    
         currentY += picHeight
         
 //        UIFont *font = [UIFont fontWithName:@"Arial" size:12];
@@ -55,7 +46,7 @@ class RSItemController: UIViewController {
         scrollView.addSubview(nameLabel)
         currentY += actualSize.height
         
-        currentY += 15
+        currentY += 10
         let priceLabel = UILabel(frame: CGRectMake(0, CGFloat(currentY), scrollWidth , 110))
         priceLabel.numberOfLines = 0
         priceLabel.text = "25 RMB/Hour"
@@ -66,7 +57,114 @@ class RSItemController: UIViewController {
         scrollView.addSubview(priceLabel)
         currentY += actualSize.height
         
-        scrollView.contentSize = CGRectMake(0, 0, scrollWidth, 970).size
+        let safetyLabel = UILabel(frame: CGRectMake(0, CGFloat(currentY), scrollWidth , 110))
+        safetyLabel.numberOfLines = 0
+        safetyLabel.text = "Safety deposit"
+        safetyLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        safetyLabel.font = UIFont.systemFontOfSize(19)
+        actualSize = safetyLabel.sizeThatFits(maxSize)
+        safetyLabel.frame = CGRectMake(0, CGFloat(currentY), actualSize.width , actualSize.height)
+        safetyLabel.textColor = UIColor.lightGrayColor()
+        scrollView.addSubview(safetyLabel)
+        
+        let safetyNumberLabel = UILabel(frame: CGRectMake(0, CGFloat(currentY), scrollWidth , 110))
+        safetyNumberLabel.numberOfLines = 0
+        safetyNumberLabel.text = "250RMB"
+        safetyNumberLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        safetyNumberLabel.font = UIFont.systemFontOfSize(19)
+        actualSize = safetyNumberLabel.sizeThatFits(maxSize)
+        safetyNumberLabel.frame = CGRectMake(safetyLabel.frame.width+5, CGFloat(currentY), actualSize.width , actualSize.height)
+        safetyNumberLabel.textColor = UIColor.lightGrayColor()
+        scrollView.addSubview(safetyNumberLabel)
+        currentY += actualSize.height
+        
+        currentY += 4
+        var line1 = UIView(frame: CGRectMake(0, currentY, scrollWidth, 1))
+        line1.backgroundColor = UIColor.lightGrayColor()
+        scrollView.addSubview(line1)
+        currentY += 8
+        
+        let pickLabel = UILabel(frame: CGRectMake(0, CGFloat(currentY), scrollWidth , 110))
+        pickLabel.numberOfLines = 0
+        pickLabel.text = "Pickup date"
+        pickLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        pickLabel.font = UIFont.systemFontOfSize(19)
+        actualSize = pickLabel.sizeThatFits(maxSize)
+        pickLabel.textAlignment = NSTextAlignment.Center
+        pickLabel.frame = CGRectMake(0, CGFloat(currentY), scrollWidth/2 , actualSize.height)
+        scrollView.addSubview(pickLabel)
+        let dropLabel = UILabel(frame: CGRectMake(0, CGFloat(currentY), scrollWidth , 110))
+        dropLabel.numberOfLines = 0
+        dropLabel.text = "Drop off date"
+        dropLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        dropLabel.font = UIFont.systemFontOfSize(19)
+        actualSize = dropLabel.sizeThatFits(maxSize)
+        dropLabel.textAlignment = NSTextAlignment.Center
+        dropLabel.frame = CGRectMake(scrollWidth/2, CGFloat(currentY), scrollWidth/2 , actualSize.height)
+        scrollView.addSubview(dropLabel)
+        
+        let line2 = UIView(frame: CGRectMake(scrollWidth/2, currentY, 1, actualSize.height * 2))
+        line2.backgroundColor = UIColor.lightGrayColor()
+        scrollView.addSubview(line2)
+        currentY += actualSize.height
+        
+        let pickDateLabel = UILabel(frame: CGRectMake(0, CGFloat(currentY), scrollWidth , 110))
+        pickDateLabel.numberOfLines = 0
+        pickDateLabel.text = "Nov 5th-10th"
+        pickDateLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        pickDateLabel.font = UIFont.systemFontOfSize(19)
+        pickDateLabel.textColor = UIColor.lightGrayColor()
+        actualSize = pickDateLabel.sizeThatFits(maxSize)
+        pickDateLabel.textAlignment = NSTextAlignment.Center
+        pickDateLabel.frame = CGRectMake(0, CGFloat(currentY), scrollWidth/2 , actualSize.height)
+        scrollView.addSubview(pickDateLabel)
+        let dropDateLabel = UILabel(frame: CGRectMake(0, CGFloat(currentY), scrollWidth , 110))
+        dropDateLabel.numberOfLines = 0
+        dropDateLabel.text = "Nov 15th"
+        dropDateLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        dropDateLabel.font = UIFont.systemFontOfSize(19)
+        dropDateLabel.textColor = UIColor.lightGrayColor()
+        actualSize = dropDateLabel.sizeThatFits(maxSize)
+        dropDateLabel.textAlignment = NSTextAlignment.Center
+        dropDateLabel.frame = CGRectMake(scrollWidth/2, CGFloat(currentY), scrollWidth/2 , actualSize.height)
+        scrollView.addSubview(dropDateLabel)
+        currentY += actualSize.height
+        
+        currentY += 3
+        
+        let line3 = UIView(frame: CGRectMake(-30, currentY, scrollWidth+60, 7))
+        line3.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
+        scrollView.addSubview(line3)
+        currentY += 20
+        
+        let detailKeys = ["Condition","Quantity","EAN","Case","UPC","Band Material","MPN","Band Color","Brand","Metal","Model"]
+        let detailValues = ["New","2","Does Not Apply","42mm","Does Not Apply","Silicone/Rubber","MJ3T2ZP/A","Black","KTM","Iron,Aluminium","KTM MX-345"]
+        for(var i = 0 ; i < detailKeys.count ; i = i + 1) {
+            let detailKeyLabel = UILabel(frame: CGRectMake(0, CGFloat(currentY), scrollWidth , 110))
+            detailKeyLabel.numberOfLines = 0
+            detailKeyLabel.text = detailKeys[i]
+            detailKeyLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+            detailKeyLabel.font = UIFont.systemFontOfSize(19)
+            actualSize = detailKeyLabel.sizeThatFits(maxSize)
+            detailKeyLabel.frame = CGRectMake(0, CGFloat(currentY), actualSize.width , actualSize.height)
+            detailKeyLabel.textColor = UIColor.lightGrayColor()
+            scrollView.addSubview(detailKeyLabel)
+            
+            let detailValueLabel = UILabel(frame: CGRectMake(0, CGFloat(currentY), scrollWidth , 110))
+            detailValueLabel.numberOfLines = 0
+            detailValueLabel.text = detailValues[i]
+            detailValueLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+            detailValueLabel.font = UIFont.systemFontOfSize(19)
+            actualSize = detailValueLabel.sizeThatFits(maxSize)
+            detailValueLabel.frame = CGRectMake(scrollWidth*2/5, CGFloat(currentY), actualSize.width , actualSize.height)
+//            detailValueLabel.textColor = UIColor.lightGrayColor()
+            scrollView.addSubview(detailValueLabel)
+            
+            currentY += actualSize.height + 8
+        }
+        
+        
+        scrollView.contentSize = CGRectMake(0, 0, scrollWidth, currentY+970).size
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
 //        scrollView.showsHorizontalScrollIndicator = false
@@ -75,10 +173,6 @@ class RSItemController: UIViewController {
 //        scrollView.showsVerticalScrollIndicator = false
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
     /*
