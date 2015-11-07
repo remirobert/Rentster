@@ -23,10 +23,10 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="esw-E8-dek">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esw-E8-dek">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <animations/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </searchBar>
                         </subviews>
                         <animations/>
@@ -66,6 +66,8 @@
                         </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="esw-E8-dek" id="Jd1-fS-O1D"/>
+                        <outlet property="segmentCategory" destination="c8m-Ak-nSh" id="33b-oH-p3K"/>
                         <outlet property="tableView" destination="iXq-R7-Scz" id="ETx-Le-k77"/>
                     </connections>
                 </viewController>
