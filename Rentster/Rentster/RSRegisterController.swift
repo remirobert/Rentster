@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import Parse
+import MBProgressHUD
 
-class RSRegisterController: UIViewController {
+class RSRegisterController: UIViewController , UITextFieldDelegate,MBProgressHUDDelegate{
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     
+    var hud = MBProgressHUD()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.delegate = self
+        passwordField.delegate = self
+        nameField.delegate = self
+        hud.delegate = self
+        self.view.addSubview(hud)
     }
     
     @IBAction func register(sender: AnyObject) {
@@ -35,11 +44,24 @@ class RSRegisterController: UIViewController {
             invalidInput("E-mail")
             return
         }
-        //do any connecting thing
+        hud.show(true)
+        User.registerUser(email!, password: password!, username: name!) { (user) -> () in
+            self.hud.hide(true)
+            self.navigationController?.popViewControllerAnimated(false)
+        }
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if (string == "\n") {
+            textField.resignFirstResponder()
+            return false
+        }
+        return true
     }
 
     func invalidInput(type:String) {
         let alert = UIAlertController(title: "Invalid Input", message: "Please Input A Valid "+type, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: {})
     }
     

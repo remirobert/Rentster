@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class RSWelcomeController: UIViewController {
     
@@ -25,5 +26,10 @@ class RSWelcomeController: UIViewController {
         
         self.navigationController?.toolbarHidden = true
         self.navigationController?.navigationBarHidden = true
+        
+        if let _ = PFUser.currentUser() {
+            let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier("CustomTabBatViewController") as! RSCustomTabBatViewController
+            self.presentViewController(tabBar, animated: false, completion: {})
+        }
     }
 }

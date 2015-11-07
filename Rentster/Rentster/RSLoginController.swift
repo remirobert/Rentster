@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import Parse
+import MBProgressHUD
 
-class RSLoginController: UIViewController {
+class RSLoginController: UIViewController,UITextFieldDelegate,MBProgressHUDDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    var hud = MBProgressHUD()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailField.delegate = self
+        passwordField.delegate = self
+        hud.delegate = self
+        self.view.addSubview(hud)
         // Do any additional setup after loading the view.
     }
 
@@ -36,16 +43,32 @@ class RSLoginController: UIViewController {
             invalidInput("Password")
             return
         }
-        //do any connecting thing
+        hud.show(true)
+        User.login(email!, password: password!) { (user) -> () in
+            if let resultuser = user {
+                self.hud.hide(true)
+                let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier("CustomTabBatViewController") as! RSCustomTabBatViewController
+                self.presentViewController(tabBar, animated: true, completion: {})
+            }
+        }
     }
     
     func invalidInput(type:String) {
         let alert = UIAlertController(title: "Invalid Input", message: "Please Input A Valid "+type, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: {})
     }
 
     @IBAction func back(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(false)
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if (string == "\n") {
+            textField.resignFirstResponder()
+            return false
+        }
+        return true
     }
     
     /*
