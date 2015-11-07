@@ -147,35 +147,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Description" id="yNQ-AF-cv7">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="122" id="fHq-ZG-7Op">
-                                        <rect key="frame" x="0.0" y="279" width="600" height="122"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fHq-ZG-7Op" id="Bf8-2o-arZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="121.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WGv-Oi-pVE" customClass="SAMTextView">
-                                                    <rect key="frame" x="8" y="8" width="584" height="105.5"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstItem="WGv-Oi-pVE" firstAttribute="bottom" secondItem="Bf8-2o-arZ" secondAttribute="bottomMargin" id="05v-hg-vNY"/>
-                                                <constraint firstItem="WGv-Oi-pVE" firstAttribute="top" secondItem="Bf8-2o-arZ" secondAttribute="topMargin" id="5S6-W7-Owp"/>
-                                                <constraint firstItem="WGv-Oi-pVE" firstAttribute="leading" secondItem="Bf8-2o-arZ" secondAttribute="leadingMargin" id="XeQ-0w-mml"/>
-                                                <constraint firstItem="WGv-Oi-pVE" firstAttribute="trailing" secondItem="Bf8-2o-arZ" secondAttribute="trailingMargin" id="laM-I7-6lB"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Details" id="Krq-Ec-B3q">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="f7e-rq-eae">
@@ -418,7 +389,6 @@
                         <outlet property="labelEnd" destination="Pe1-BN-4xh" id="npE-VX-b4d"/>
                         <outlet property="labelPrice" destination="wVZ-JF-xaf" id="wC7-ye-260"/>
                         <outlet property="labelStart" destination="dK5-pk-wVo" id="JIP-Ug-oNk"/>
-                        <outlet property="textViewDescription" destination="WGv-Oi-pVE" id="H0v-4x-fzr"/>
                         <segue destination="VVa-zs-EFs" kind="presentation" identifier="previewPictureSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="PbJ-TX-tBp"/>
                         <segue destination="ybA-pN-vxs" kind="presentation" modalPresentationStyle="overFullScreen" id="r1v-DG-WU2"/>
                     </connections>

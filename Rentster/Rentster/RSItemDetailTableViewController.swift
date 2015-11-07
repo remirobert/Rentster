@@ -59,12 +59,12 @@ class RSItemDetailTableViewController: UITableViewController {
             self.labelPrice.text = "NA"
         }
         
-        if let description = self.good.descriptionGood {
-            self.textViewDescription.text = description
-        }
-        else {
-            self.textViewDescription.placeholder = "No description"
-        }
+//        if let description = self.good.descriptionGood {
+//            self.textViewDescription.text = description
+//        }
+//        else {
+//            self.textViewDescription.placeholder = "No description"
+//        }
         
         if let start = self.good.startDate {
             self.labelStart.text = "Start date : \(start)"
@@ -87,6 +87,7 @@ class RSItemDetailTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "previewPictureSegue" {
             (segue.destinationViewController as! RSPreviewPictureViewController).image = sender as! UIImage
+            (segue.destinationViewController as! RSPreviewPictureViewController).decriptionGood = self.good.descriptionGood
         }
     }
 }
