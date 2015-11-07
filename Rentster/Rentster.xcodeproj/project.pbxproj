@@ -11,20 +11,21 @@
 		7F51BCF81BEB52DC002B0D91 /* RSItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F51BCF71BEB52DC002B0D91 /* RSItemController.swift */; };
 		874EA9231BC4560700B67E63 /* RSHomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874EA9211BC4560700B67E63 /* RSHomePageCell.swift */; };
 		874EA9241BC4560700B67E63 /* RSHomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 874EA9221BC4560700B67E63 /* RSHomePageCell.xib */; };
-		875931B01BEDE11C00B857AD /* CreateNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875931AF1BEDE11C00B857AD /* CreateNewController.swift */; settings = {ASSET_TAGS = (); }; };
+		875931B01BEDE11C00B857AD /* CreateNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875931AF1BEDE11C00B857AD /* CreateNewController.swift */; };
 		87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A6F1BBE324E00FD8713 /* AppDelegate.swift */; };
-		87702A751BBE324E00FD8713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87702A731BBE324E00FD8713 /* Main.storyboard */; };
 		87702A771BBE324E00FD8713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87702A761BBE324E00FD8713 /* Assets.xcassets */; };
 		87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87702A781BBE324E00FD8713 /* LaunchScreen.storyboard */; };
 		87702A851BBE324E00FD8713 /* RentsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A841BBE324E00FD8713 /* RentsterTests.swift */; };
 		87702A901BBE324E00FD8713 /* RentsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A8F1BBE324E00FD8713 /* RentsterUITests.swift */; };
 		87893B7D1BC0EA4F00DD0EF8 /* RSHomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87893B7C1BC0EA4F00DD0EF8 /* RSHomePageController.swift */; };
-		87FD7C091BC0527F00F2ACE3 /* BROptionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C061BC0527F00F2ACE3 /* BROptionItem.m */; };
-		87FD7C0A1BC0527F00F2ACE3 /* BROptionsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C081BC0527F00F2ACE3 /* BROptionsButton.m */; };
-		87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */; };
 		BB332FAC1BEDD78D0040114B /* ContactUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB332FAA1BEDD78D0040114B /* ContactUser.swift */; };
 		BB332FAD1BEDD78D0040114B /* Good.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB332FAB1BEDD78D0040114B /* Good.swift */; };
 		BB332FAF1BEDDD5D0040114B /* RSCustomTabBatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB332FAE1BEDDD5D0040114B /* RSCustomTabBatViewController.swift */; };
+		BBC4595B1BEE26B800461A97 /* RSContactContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC459591BEE26B800461A97 /* RSContactContactView.swift */; };
+		BBC4595C1BEE26B800461A97 /* RSContactContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC4595A1BEE26B800461A97 /* RSContactContactView.xib */; };
+		BBC4595F1BEE26DC00461A97 /* RSItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4595D1BEE26DC00461A97 /* RSItemDetailTableViewController.swift */; };
+		BBC459601BEE26DC00461A97 /* RSPreviewPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4595E1BEE26DC00461A97 /* RSPreviewPictureViewController.swift */; };
+		BBC459621BEE26F400461A97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC459611BEE26F400461A97 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,6 @@
 		875931AF1BEDE11C00B857AD /* CreateNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewController.swift; sourceTree = "<group>"; };
 		87702A6C1BBE324E00FD8713 /* Rentster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rentster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87702A6F1BBE324E00FD8713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87702A741BBE324E00FD8713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87702A761BBE324E00FD8713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87702A791BBE324E00FD8713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87702A7B1BBE324E00FD8713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,15 +64,15 @@
 		87702A911BBE324E00FD8713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87893B7C1BC0EA4F00DD0EF8 /* RSHomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSHomePageController.swift; sourceTree = "<group>"; };
 		87FD7C041BC0527F00F2ACE3 /* Rentster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rentster-Bridging-Header.h"; sourceTree = "<group>"; };
-		87FD7C051BC0527F00F2ACE3 /* BROptionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BROptionItem.h; path = BROptionsButton/BROptionItem.h; sourceTree = SOURCE_ROOT; };
-		87FD7C061BC0527F00F2ACE3 /* BROptionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BROptionItem.m; path = BROptionsButton/BROptionItem.m; sourceTree = SOURCE_ROOT; };
-		87FD7C071BC0527F00F2ACE3 /* BROptionsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BROptionsButton.h; path = BROptionsButton/BROptionsButton.h; sourceTree = SOURCE_ROOT; };
-		87FD7C081BC0527F00F2ACE3 /* BROptionsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BROptionsButton.m; path = BROptionsButton/BROptionsButton.m; sourceTree = SOURCE_ROOT; };
-		87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSTabBarController.swift; sourceTree = "<group>"; };
 		8BB7046CA378E6A0BEA12E00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BB332FAA1BEDD78D0040114B /* ContactUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUser.swift; sourceTree = "<group>"; };
 		BB332FAB1BEDD78D0040114B /* Good.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Good.swift; sourceTree = "<group>"; };
 		BB332FAE1BEDDD5D0040114B /* RSCustomTabBatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCustomTabBatViewController.swift; sourceTree = "<group>"; };
+		BBC459591BEE26B800461A97 /* RSContactContactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSContactContactView.swift; sourceTree = "<group>"; };
+		BBC4595A1BEE26B800461A97 /* RSContactContactView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSContactContactView.xib; sourceTree = "<group>"; };
+		BBC4595D1BEE26DC00461A97 /* RSItemDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSItemDetailTableViewController.swift; sourceTree = "<group>"; };
+		BBC4595E1BEE26DC00461A97 /* RSPreviewPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSPreviewPictureViewController.swift; sourceTree = "<group>"; };
+		BBC459611BEE26F400461A97 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +124,8 @@
 			children = (
 				874EA9211BC4560700B67E63 /* RSHomePageCell.swift */,
 				874EA9221BC4560700B67E63 /* RSHomePageCell.xib */,
+				BBC459591BEE26B800461A97 /* RSContactContactView.swift */,
+				BBC4595A1BEE26B800461A97 /* RSContactContactView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -154,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				874EA91A1BC4436000B67E63 /* View */,
-				87FD7C0B1BC052A600F2ACE3 /* BROptionsButton */,
 				BB8FF56A1BBEB37D00C68647 /* Models */,
 				BB8FF5651BBEA9DC00C68647 /* Controllers */,
 				BB95D99A1BBEA7D000F7F6E9 /* Application */,
@@ -181,21 +182,11 @@
 			path = RentsterUITests;
 			sourceTree = "<group>";
 		};
-		87FD7C0B1BC052A600F2ACE3 /* BROptionsButton */ = {
-			isa = PBXGroup;
-			children = (
-				87FD7C051BC0527F00F2ACE3 /* BROptionItem.h */,
-				87FD7C061BC0527F00F2ACE3 /* BROptionItem.m */,
-				87FD7C071BC0527F00F2ACE3 /* BROptionsButton.h */,
-				87FD7C081BC0527F00F2ACE3 /* BROptionsButton.m */,
-			);
-			name = BROptionsButton;
-			sourceTree = "<group>";
-		};
 		BB8FF5651BBEA9DC00C68647 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */,
+				BBC4595D1BEE26DC00461A97 /* RSItemDetailTableViewController.swift */,
+				BBC4595E1BEE26DC00461A97 /* RSPreviewPictureViewController.swift */,
 				BB332FAE1BEDDD5D0040114B /* RSCustomTabBatViewController.swift */,
 				87893B7C1BC0EA4F00DD0EF8 /* RSHomePageController.swift */,
 				7F51BCF71BEB52DC002B0D91 /* RSItemController.swift */,
@@ -217,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				87702A6F1BBE324E00FD8713 /* AppDelegate.swift */,
-				87702A731BBE324E00FD8713 /* Main.storyboard */,
+				BBC459611BEE26F400461A97 /* Main.storyboard */,
 				87702A761BBE324E00FD8713 /* Assets.xcassets */,
 				87702A781BBE324E00FD8713 /* LaunchScreen.storyboard */,
 				87702A7B1BBE324E00FD8713 /* Info.plist */,
@@ -337,7 +328,8 @@
 				87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */,
 				87702A771BBE324E00FD8713 /* Assets.xcassets in Resources */,
 				874EA9241BC4560700B67E63 /* RSHomePageCell.xib in Resources */,
-				87702A751BBE324E00FD8713 /* Main.storyboard in Resources */,
+				BBC4595C1BEE26B800461A97 /* RSContactContactView.xib in Resources */,
+				BBC459621BEE26F400461A97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,14 +403,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB332FAD1BEDD78D0040114B /* Good.swift in Sources */,
-				87FD7C0A1BC0527F00F2ACE3 /* BROptionsButton.m in Sources */,
+				BBC459601BEE26DC00461A97 /* RSPreviewPictureViewController.swift in Sources */,
 				BB332FAF1BEDDD5D0040114B /* RSCustomTabBatViewController.swift in Sources */,
 				874EA9231BC4560700B67E63 /* RSHomePageCell.swift in Sources */,
-				87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */,
 				87893B7D1BC0EA4F00DD0EF8 /* RSHomePageController.swift in Sources */,
 				875931B01BEDE11C00B857AD /* CreateNewController.swift in Sources */,
-				87FD7C091BC0527F00F2ACE3 /* BROptionItem.m in Sources */,
 				7F51BCF81BEB52DC002B0D91 /* RSItemController.swift in Sources */,
+				BBC4595B1BEE26B800461A97 /* RSContactContactView.swift in Sources */,
+				BBC4595F1BEE26DC00461A97 /* RSItemDetailTableViewController.swift in Sources */,
 				87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */,
 				BB332FAC1BEDD78D0040114B /* ContactUser.swift in Sources */,
 			);
@@ -456,14 +448,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		87702A731BBE324E00FD8713 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87702A741BBE324E00FD8713 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		87702A781BBE324E00FD8713 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

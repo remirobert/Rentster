@@ -14,10 +14,22 @@ class RSHomePageController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentCategory: UISegmentedControl!
     
+    lazy var refreshControl: UIRefreshControl! = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "fetchData", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.backgroundColor = UIColor.clearColor()
+        return refreshControl
+    }()
+    
     var goods = Array<Good>()
     
     func fetchData() {
         Good.goodsNearUser { (goods) -> () in
+            
+            if self.refreshControl.refreshing {
+                self.refreshControl.endRefreshing()
+            }
+            
             if let goods = goods {
                 self.goods = goods
                 self.tableView.reloadData()
@@ -35,6 +47,7 @@ class RSHomePageController: UIViewController {
         self.tableView.tableFooterView = UIView()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.addSubview(self.refreshControl)
         self.fetchData()
     }
 }
@@ -56,17 +69,16 @@ extension RSHomePageController: UITableViewDataSource {
 extension RSHomePageController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let item = (self.storyboard?.instantiateViewControllerWithIdentifier("ItemController")) as! RSItemController
-        self.navigationController?.pushViewController(item, animated: true)
+        self.performSegueWithIdentifier("detailItemSegue", sender: nil)
     }
-
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 256
     }
 }
 
 extension RSHomePageController: UISearchBarDelegate {
-
+    
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
     }
