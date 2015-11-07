@@ -11,15 +11,25 @@ import UIKit
 class RSHomePageCell: UITableViewCell {
 
     @IBOutlet weak var cellImage: UIImageView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelPrice: UILabel!
+    @IBOutlet weak var labelSaveDeposit: UILabel!
+    
+    override func prepareForReuse() {
+        self.cellImage.image = nil
+        self.labelTitle.text = nil
+        self.labelPrice.text = nil
+        self.labelSaveDeposit.text = nil
     }
     
+    func bindCell(good: Good) {
+        self.labelTitle.text = good.title
+        
+        self.cellImage.image = nil
+        good.fectchImage { (image) -> () in
+            if let image = image {
+                self.cellImage.image = image
+            }
+        }        
+    }
 }

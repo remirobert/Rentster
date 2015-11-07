@@ -27,10 +27,30 @@ class Good {
     var descriptionGood: String?
     var startDate: NSDate?
     var endDate: NSDate?
-    var image: UIImage?
     var contact: ContactUser!
     var category: GoodCategorie!
+    private var image: UIImage?
     private var fileImage: PFFile?
+    
+    func fectchImage(blockCompletion: ((image:UIImage?)->())) {
+        if let image = self.image {
+            blockCompletion(image: image)
+        }
+        else if let fileImage = self.fileImage {
+            fileImage.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) -> Void in
+                if let dataImage = data where error == nil {
+                    self.image = UIImage(data: dataImage)
+                    blockCompletion(image: self.image)
+                }
+                else {
+                    blockCompletion(image: nil)
+                }
+            })
+        }
+        else {
+            blockCompletion(image: nil)
+        }
+    }
     
     private func createParseObject() -> PFObject {
         let newObject = PFObject(className: "Good")
@@ -93,6 +113,7 @@ extension Good {
                     if let stringSearch = stringSearch {
                         querry.whereKey("title", containsString: stringSearch)
                     }
+                    querry.cachePolicy = PFCachePolicy.CacheThenNetwork
                     querry.whereKey("geoPoint", nearGeoPoint: geoPoint, withinKilometers: kilometers)
                     
                     querry.findObjectsInBackgroundWithBlock({ (results:[PFObject]?, error:NSError?) -> Void in
