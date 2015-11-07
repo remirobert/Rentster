@@ -8,13 +8,21 @@
 
 import UIKit
 
-class CreateNewController: UITableViewController {
+class CreateNewController: UITableViewController,UIActionSheetDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     @IBOutlet weak var wechatField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var emailField: UITextField!
+    
+    @IBOutlet weak var itemNameField: UITextField!
+    @IBOutlet weak var itemPriceField: UITextField!
+    @IBOutlet weak var safetyDepositField: UITextField!
+    @IBOutlet weak var pickDateField: UITextField!
+    @IBOutlet weak var dropDateField: UITextField!
+
     @IBOutlet weak var descView: UITextView!
     
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,17 +40,102 @@ class CreateNewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = t/Volumes/NO NAME/1446906373_home.png
-/Volumes/NO NAME/1446906725_profile-filled.pngableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+//
+//        // Configure the cell...
+//        
+//        print(indexPath.row)
+//
+//        return cell
+//    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath.row)
+        if(indexPath.section == 0){
+            if(indexPath.row == 0){
+                let actionSheet = UIActionSheet(title: "Pick a Picture", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Album", "Camera")
+                actionSheet.showInView(self.view)
 
-        // Configure the cell...
-
-        return cell
+            }
+        }
     }
-    */
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        switch buttonIndex {
+            case 1:
+                photoFromAlbum()
+            print("album")
+            
+            case 2:
+                print("cam")
+                photoFromCamera()
+            
+            default:
+                break
+        }
+    }
+    
+    func photoFromAlbum() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            picker.allowsEditing = true
+            self.presentViewController(picker, animated: true, completion: {
+                () -> Void in
+            })
+        }else {
+            print("Error loading the Album")
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        print(info)
+        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        
+        if picker.sourceType == UIImagePickerControllerSourceType.Camera {
+            let imageToSave: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            imageView.image = imageToSave
+        }
+        
+        picker.dismissViewControllerAnimated(true, completion: {
+            () -> Void in
+        })
+    }
+    
+    func photoFromCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            
+            let picker = UIImagePickerController()
+            
+            picker.delegate = self
+            
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            
+            picker.allowsEditing = true
+            
+            self.presentViewController(picker, animated: true, completion: { () -> Void in
+                
+            })
+        }else {
+            print("Can't Find the Camera")
+        }
+    }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

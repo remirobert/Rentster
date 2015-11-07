@@ -478,8 +478,14 @@
                     <navigationItem key="navigationItem" id="8SP-Ch-3ap"/>
                     <connections>
                         <outlet property="descView" destination="hhq-5F-z8T" id="bAo-im-Hmv"/>
+                        <outlet property="dropDateField" destination="VN6-35-6P2" id="4N5-zs-KyC"/>
                         <outlet property="emailField" destination="X80-qA-Bkp" id="fOM-LB-SFb"/>
+                        <outlet property="imageView" destination="GN0-N8-tj1" id="IMs-DX-TXy"/>
+                        <outlet property="itemNameField" destination="bCt-p9-AgP" id="9a0-2q-1cM"/>
+                        <outlet property="itemPriceField" destination="ohx-Kb-TDb" id="j3U-8p-tSX"/>
                         <outlet property="phoneField" destination="eIz-XV-9DL" id="4p6-TR-Kby"/>
+                        <outlet property="pickDateField" destination="bTE-Kd-qbd" id="zbP-yI-8NW"/>
+                        <outlet property="safetyDepositField" destination="xgj-W3-0Nc" id="yAD-7U-gbL"/>
                         <outlet property="wechatField" destination="AGp-56-F4s" id="yqe-MU-bep"/>
                     </connections>
                 </tableViewController>
