@@ -47,7 +47,17 @@ class RSRegisterController: UIViewController , UITextFieldDelegate,MBProgressHUD
         hud.show(true)
         User.registerUser(email!, password: password!, username: name!) { (user) -> () in
             self.hud.hide(true)
-            self.navigationController?.popViewControllerAnimated(false)
+            if let state = user {
+                let alert = UIAlertController(title: "Register Successful", message: "Register Successful! Now you can login and enjoy .", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: { (_) -> Void in
+                    self.navigationController?.popViewControllerAnimated(false)
+                }))
+                self.presentViewController(alert, animated: true, completion: {})
+            } else{
+                let alert = UIAlertController(title: "Register Failed", message: "Your E-mail is already used .", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: {})
+            }
         }
     }
     
@@ -59,6 +69,10 @@ class RSRegisterController: UIViewController , UITextFieldDelegate,MBProgressHUD
         return true
     }
 
+    func regOK() {
+        self.navigationController?.popViewControllerAnimated(false)
+    }
+    
     func invalidInput(type:String) {
         let alert = UIAlertController(title: "Invalid Input", message: "Please Input A Valid "+type, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))

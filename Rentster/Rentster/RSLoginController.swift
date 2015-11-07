@@ -45,10 +45,14 @@ class RSLoginController: UIViewController,UITextFieldDelegate,MBProgressHUDDeleg
         }
         hud.show(true)
         User.login(email!, password: password!) { (user) -> () in
+            self.hud.hide(true)
             if let resultuser = user {
-                self.hud.hide(true)
                 let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier("CustomTabBatViewController") as! RSCustomTabBatViewController
                 self.presentViewController(tabBar, animated: true, completion: {})
+            } else{
+                let alert = UIAlertController(title: "Login Failed", message: "Please check your E-mail and your password .", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: {})
             }
         }
     }
