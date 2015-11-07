@@ -1,16 +1,22 @@
 PODS:
   - Bolts/Tasks (1.4.0)
+  - MBProgressHUD (0.9.1)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
+  - SAMTextView (0.2.2)
   - SnapKit (0.16.0)
 
 DEPENDENCIES:
+  - MBProgressHUD
   - Parse
+  - SAMTextView
   - SnapKit
 
 SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  SAMTextView: 979c43bb1fa5859ddfbfeb35e9c296a2b0ec55fd
   SnapKit: ddac6b339d571f9d80dbb733585b172ee9eed3cb
 
-COCOAPODS: 0.39.0
+COCOAPODS: 0.38.2
