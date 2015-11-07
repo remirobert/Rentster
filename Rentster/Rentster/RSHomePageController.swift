@@ -80,7 +80,7 @@ extension RSHomePageController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 256
+        return 245
     }
 }
 

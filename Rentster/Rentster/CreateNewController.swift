@@ -68,6 +68,9 @@ class CreateNewController: UITableViewController {
         self.textFieldEnd.delegate = self
         self.textFieldDeposit.delegate = self
         self.textFieldPrice.delegate = self
+        
+        let headerView = UINib(nibName: "ViewHeaderCreation", bundle: nil).instantiateWithOwner(self, options: nil).first as! ViewHeaderCreation
+        self.tableView.tableHeaderView = headerView
     }
 }
 
@@ -123,6 +126,7 @@ extension CreateNewController: UIImagePickerControllerDelegate, UINavigationCont
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             self.imageViewPicture.image = image
         }
+        self.imageViewPicture.contentMode = UIViewContentMode.ScaleAspectFill
         self.imageViewPicture.backgroundColor = UIColor.whiteColor()
         picker.dismissViewControllerAnimated(true, completion:nil)
     }

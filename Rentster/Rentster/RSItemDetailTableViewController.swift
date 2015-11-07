@@ -30,14 +30,14 @@ class RSItemDetailTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.navigationController!.view.addSubview(self.contactView)
-        self.contactView.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(self.view)
-            make.height.equalTo(50)
-            make.bottom.equalTo(-49)
-            make.centerX.equalTo(self.view)
-        }
-        self.contactView.layoutSubviews()
+//        self.navigationController!.view.addSubview(self.contactView)
+//        self.contactView.snp_makeConstraints { (make) -> Void in
+//            make.width.equalTo(self.view)
+//            make.height.equalTo(50)
+//            make.bottom.equalTo(-49)
+//            make.centerX.equalTo(self.view)
+//        }
+//        self.contactView.layoutSubviews()
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,8 +46,6 @@ class RSItemDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let headerView = UINib(nibName: "ViewHeaderCreation", bundle: nil).instantiateWithOwner(self, options: nil).first as! ViewHeaderCreation
-        self.tableView.tableHeaderView = headerView        
         
         let navigationBarAppearance = self.navigationController?.navigationBar
         navigationBarAppearance!.setBackgroundImage(UIImage(), forBarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
@@ -95,7 +93,7 @@ class RSItemDetailTableViewController: UITableViewController {
         }
         
         self.imagePreviewPicture.userInteractionEnabled = false
-        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 40, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 40, 0)        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

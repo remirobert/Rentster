@@ -112,8 +112,8 @@ class Good {
 extension Good {
     
     private class func searchGoodsNear(stringSearch: String?, kilometers: Double = 20, category: Category? = nil, blockCompletion: ((goods:[Good]?)->())) {
-            PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
-                if let geoPoint = geoPoint where error == nil {
+//            PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
+//                if let geoPoint = geoPoint where error == nil {
                     let querry = PFQuery(className: "Good")
                     
                     if let category = category {
@@ -123,8 +123,8 @@ extension Good {
                         querry.whereKey("title", containsString: stringSearch)
                     }
                     querry.cachePolicy = PFCachePolicy.CacheThenNetwork
-                    querry.whereKey("geoPoint", nearGeoPoint: geoPoint, withinKilometers: kilometers)
-                    
+//                    querry.whereKey("geoPoint", nearGeoPoint: geoPoint, withinKilometers: kilometers)
+        
                     querry.findObjectsInBackgroundWithBlock({ (results:[PFObject]?, error:NSError?) -> Void in
                         if let results = results where error == nil {
                             blockCompletion(goods:results.map {return Good.buildGood($0)})
@@ -134,11 +134,11 @@ extension Good {
                         }
                     })
                 }
-                else {
-                    blockCompletion(goods:nil)
-                }
-            })
-    }
+//                else {
+//                    blockCompletion(goods:nil)
+//                }
+//            })
+//    }
     
     class func goodsNearUser(kilometers: Double = 20, category: Category? = nil, blockCompletion: ((goods:[Good]?)->())) {
         self.searchGoodsNear(nil, kilometers: kilometers, category: category, blockCompletion: blockCompletion)
