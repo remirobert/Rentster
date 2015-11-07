@@ -18,7 +18,7 @@ class RSTabBarController: UITabBarController ,  BROptionButtonDelegate{
 //        var third = self.viewControllers![2]
 //        third.delete(nil)
         
-        var brOption = BROptionsButton(tabBar: self.tabBar, forItemIndex: 2, delegate: self)
+        let brOption = BROptionsButton(tabBar: self.tabBar, forItemIndex: 1, delegate: self)
         brOption.setImage(UIImage(named: "Apple"), forBROptionsButtonState: BROptionsButtonStateNormal)
         brOption.setImage(UIImage(named: "Apple"), forBROptionsButtonState: BROptionsButtonStateOpened)
         // Do any additional setup after loading the view.
