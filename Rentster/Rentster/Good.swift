@@ -1,0 +1,143 @@
+//
+//  Good.swift
+//  APIRenty
+//
+//  Created by Remi Robert on 04/11/15.
+//  Copyright © 2015 Remi Robert. All rights reserved.
+//
+
+import UIKit
+import Parse
+
+enum GoodCategorie {
+    case Service, Good
+    
+    static func categoryFromIndex(index: Int) -> GoodCategorie {
+        switch index {
+        case 0: return .Service
+        case 1: return .Good
+        default: return .Service
+        }
+    }
+}
+
+class Good {
+
+    var title: String!
+    var descriptionGood: String?
+    var startDate: NSDate?
+    var endDate: NSDate?
+    var image: UIImage?
+    var contact: ContactUser!
+    var category: GoodCategorie!
+    private var fileImage: PFFile?
+    
+    private func createParseObject() -> PFObject {
+        let newObject = PFObject(className: "Good")
+        
+        if let title = self.title {
+            newObject["title"] = title
+        }
+        if let description = self.descriptionGood {
+            newObject["description"] = description
+        }
+        if let startDate = self.startDate {
+            newObject["start"] = startDate
+        }
+        if let endDate = self.endDate {
+            newObject["end"] = endDate
+        }
+        if let image = self.image, let dataImage = UIImageJPEGRepresentation(image, 0.5) {
+            newObject["image"] = PFFile(data: dataImage)
+        }
+        if let category = self.category {
+            newObject["category"] = category.hashValue
+        }
+        return newObject
+    }
+    
+    class func buildGood(object: PFObject) -> Good {
+        let newGood = Good()
+        if let title = object["title"] as? String {
+            newGood.title = title
+        }
+        if let description = object["description"] as? String {
+            newGood.descriptionGood = description
+        }
+        if let start = object["start"] as? NSDate {
+            newGood.startDate = start
+        }
+        if let end = object["end"] as? NSDate {
+            newGood.endDate = end
+        }
+        if let fileImage = object["picture"] as? PFFile {
+            newGood.fileImage = fileImage
+        }
+        if let category = object["category"] as? Int {
+            newGood.category = GoodCategorie.categoryFromIndex(category)
+        }
+        return newGood
+    }
+}
+
+extension Good {
+    
+    private class func searchGoodsNear(stringSearch: String?, kilometers: Double = 20, category: Category? = nil, blockCompletion: ((goods:[Good]?)->())) {
+            PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
+                if let geoPoint = geoPoint where error == nil {
+                    let querry = PFQuery(className: "Good")
+                    
+                    if let category = category {
+                        querry.whereKey("category", equalTo: category.hashValue)
+                    }
+                    if let stringSearch = stringSearch {
+                        querry.whereKey("title", containsString: stringSearch)
+                    }
+                    querry.whereKey("geoPoint", nearGeoPoint: geoPoint, withinKilometers: kilometers)
+                    
+                    querry.findObjectsInBackgroundWithBlock({ (results:[PFObject]?, error:NSError?) -> Void in
+                        if let results = results where error == nil {
+                            blockCompletion(goods:results.map {return Good.buildGood($0)})
+                        }
+                        else {
+                            blockCompletion(goods:nil)
+                        }
+                    })
+                }
+                else {
+                    blockCompletion(goods:nil)
+                }
+            })
+    }
+    
+    class func goodsNearUser(kilometers: Double = 20, category: Category? = nil, blockCompletion: ((goods:[Good]?)->())) {
+        self.searchGoodsNear(nil, kilometers: kilometers, category: category, blockCompletion: blockCompletion)
+    }
+    
+    class func searchByString(stringSearch: String, kilometers: Double = 20, category: Category? = nil, blockCompletion: ((goods:[Good]?)->())) {
+        self.searchGoodsNear(stringSearch, kilometers: kilometers, category: category, blockCompletion: blockCompletion)
+    }
+    
+    class func createNewGood(good: Good, blockCompletion: ((good:Good?)->())) {
+        let goodObject = good.createParseObject()
+        
+        PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
+            if let geoPoint = geoPoint where error == nil {
+                goodObject["geoPoint"] = geoPoint
+                goodObject.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                    if success && error == nil {
+                        blockCompletion(good: good)
+                    }
+                    else {
+                        print("error creation : \(error)")
+                        blockCompletion(good: nil)
+                    }
+                })
+            }
+            else {
+                print("error localisation : \(error)")
+                blockCompletion(good: nil)
+            }
+        })
+    }
+}

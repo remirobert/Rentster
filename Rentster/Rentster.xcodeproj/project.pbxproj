@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		061E1B6628FCAA28DBB02982 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72652D508BE7F85647DDFF22 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		061E1B6628FCAA28DBB02982 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72652D508BE7F85647DDFF22 /* Pods.framework */; };
 		7F51BCF81BEB52DC002B0D91 /* RSItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F51BCF71BEB52DC002B0D91 /* RSItemController.swift */; };
 		874EA9231BC4560700B67E63 /* RSHomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874EA9211BC4560700B67E63 /* RSHomePageCell.swift */; };
 		874EA9241BC4560700B67E63 /* RSHomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 874EA9221BC4560700B67E63 /* RSHomePageCell.xib */; };
@@ -21,7 +21,8 @@
 		87FD7C091BC0527F00F2ACE3 /* BROptionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C061BC0527F00F2ACE3 /* BROptionItem.m */; };
 		87FD7C0A1BC0527F00F2ACE3 /* BROptionsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C081BC0527F00F2ACE3 /* BROptionsButton.m */; };
 		87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */; };
-		BB8FF5671BBEA9E900C68647 /* RSMessagesControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */; };
+		BB332FAC1BEDD78D0040114B /* ContactUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB332FAA1BEDD78D0040114B /* ContactUser.swift */; };
+		BB332FAD1BEDD78D0040114B /* Good.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB332FAB1BEDD78D0040114B /* Good.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +67,8 @@
 		87FD7C081BC0527F00F2ACE3 /* BROptionsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BROptionsButton.m; path = BROptionsButton/BROptionsButton.m; sourceTree = SOURCE_ROOT; };
 		87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSTabBarController.swift; sourceTree = "<group>"; };
 		8BB7046CA378E6A0BEA12E00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSMessagesControllerViewController.swift; sourceTree = "<group>"; };
+		BB332FAA1BEDD78D0040114B /* ContactUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUser.swift; sourceTree = "<group>"; };
+		BB332FAB1BEDD78D0040114B /* Good.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Good.swift; sourceTree = "<group>"; };
 		C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */,
-				BB8FF5661BBEA9E900C68647 /* RSMessagesControllerViewController.swift */,
 				87893B7C1BC0EA4F00DD0EF8 /* RSHomePageController.swift */,
 				7F51BCF71BEB52DC002B0D91 /* RSItemController.swift */,
 			);
@@ -200,6 +201,8 @@
 		BB8FF56A1BBEB37D00C68647 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BB332FAA1BEDD78D0040114B /* ContactUser.swift */,
+				BB332FAB1BEDD78D0040114B /* Good.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -287,7 +290,7 @@
 				TargetAttributes = {
 					87702A6B1BBE324E00FD8713 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = TT934WMMM9;
+						DevelopmentTeam = 44Q2J6374R;
 					};
 					87702A7F1BBE324E00FD8713 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -402,14 +405,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB332FAD1BEDD78D0040114B /* Good.swift in Sources */,
 				87FD7C0A1BC0527F00F2ACE3 /* BROptionsButton.m in Sources */,
 				874EA9231BC4560700B67E63 /* RSHomePageCell.swift in Sources */,
 				87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */,
 				87893B7D1BC0EA4F00DD0EF8 /* RSHomePageController.swift in Sources */,
-				BB8FF5671BBEA9E900C68647 /* RSMessagesControllerViewController.swift in Sources */,
 				87FD7C091BC0527F00F2ACE3 /* BROptionItem.m in Sources */,
 				7F51BCF81BEB52DC002B0D91 /* RSItemController.swift in Sources */,
 				87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */,
+				BB332FAC1BEDD78D0040114B /* ContactUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,11 +556,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Rentster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rentster.Rentster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Rentster/Rentster-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -569,11 +575,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Rentster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rentster.Rentster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Rentster/Rentster-Bridging-Header.h";
 			};
 			name = Release;

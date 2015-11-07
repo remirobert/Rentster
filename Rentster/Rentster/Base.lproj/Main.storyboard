@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u6z-rT-GJ7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u6z-rT-GJ7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -18,7 +18,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="g3z-Ng-HaP" kind="relationship" relationship="viewControllers" id="XcJ-i4-Hwr"/>
-                        <segue destination="wtI-3I-hTH" kind="relationship" relationship="viewControllers" id="Uz7-uy-tID"/>
                         <segue destination="z19-or-dEt" kind="relationship" relationship="viewControllers" id="Oz4-SR-MAm"/>
                         <segue destination="X9X-9a-fDM" kind="relationship" relationship="viewControllers" id="Cjg-Nl-SgQ"/>
                         <segue destination="75U-ja-zqc" kind="relationship" relationship="viewControllers" id="cQg-Tk-RzN"/>
@@ -143,27 +142,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLB-TZ-pik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2416" y="-299"/>
-        </scene>
-        <!--Message-->
-        <scene sceneID="CzV-rv-48x">
-            <objects>
-                <viewController id="wtI-3I-hTH" customClass="RSMessagesControllerViewController" customModule="Rentster" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uoV-pn-ads"/>
-                        <viewControllerLayoutGuide type="bottom" id="U53-10-PhT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hUo-V9-Weo">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Message" id="R0v-FE-g07"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="phw-Yx-tYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1112" y="449"/>
         </scene>
         <!--nothing-->
         <scene sceneID="PLN-DI-vzk">
