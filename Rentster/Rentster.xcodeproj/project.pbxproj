@@ -23,6 +23,7 @@
 		87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */; };
 		BB332FAC1BEDD78D0040114B /* ContactUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB332FAA1BEDD78D0040114B /* ContactUser.swift */; };
 		BB332FAD1BEDD78D0040114B /* Good.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB332FAB1BEDD78D0040114B /* Good.swift */; };
+		BB332FAF1BEDDD5D0040114B /* RSCustomTabBatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB332FAE1BEDDD5D0040114B /* RSCustomTabBatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		8BB7046CA378E6A0BEA12E00 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BB332FAA1BEDD78D0040114B /* ContactUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUser.swift; sourceTree = "<group>"; };
 		BB332FAB1BEDD78D0040114B /* Good.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Good.swift; sourceTree = "<group>"; };
+		BB332FAE1BEDDD5D0040114B /* RSCustomTabBatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCustomTabBatViewController.swift; sourceTree = "<group>"; };
 		C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				87FD7C0C1BC0537B00F2ACE3 /* RSTabBarController.swift */,
+				BB332FAE1BEDDD5D0040114B /* RSCustomTabBatViewController.swift */,
 				87893B7C1BC0EA4F00DD0EF8 /* RSHomePageController.swift */,
 				7F51BCF71BEB52DC002B0D91 /* RSItemController.swift */,
 			);
@@ -407,6 +410,7 @@
 			files = (
 				BB332FAD1BEDD78D0040114B /* Good.swift in Sources */,
 				87FD7C0A1BC0527F00F2ACE3 /* BROptionsButton.m in Sources */,
+				BB332FAF1BEDDD5D0040114B /* RSCustomTabBatViewController.swift in Sources */,
 				874EA9231BC4560700B67E63 /* RSHomePageCell.swift in Sources */,
 				87FD7C0D1BC0537B00F2ACE3 /* RSTabBarController.swift in Sources */,
 				87893B7D1BC0EA4F00DD0EF8 /* RSHomePageController.swift in Sources */,
