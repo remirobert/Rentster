@@ -28,8 +28,8 @@
 		BBC459681BEE55D300461A97 /* RSItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC459671BEE55D300461A97 /* RSItemDetailTableViewController.swift */; };
 		BBC4596A1BEE55E100461A97 /* RSPreviewPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC459691BEE55E100461A97 /* RSPreviewPictureViewController.swift */; };
 		BBC4596C1BEE55F600461A97 /* RSHomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4596B1BEE55F600461A97 /* RSHomePageController.swift */; };
-		BBC4596E1BEE56E300461A97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC4596D1BEE56E300461A97 /* Main.storyboard */; };
 		BBC459701BEE58ED00461A97 /* USer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4596F1BEE58ED00461A97 /* USer.swift */; };
+		BBE3F6131BEE9895004ED842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE3F6121BEE9895004ED842 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +79,8 @@
 		BBC459671BEE55D300461A97 /* RSItemDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSItemDetailTableViewController.swift; sourceTree = "<group>"; };
 		BBC459691BEE55E100461A97 /* RSPreviewPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSPreviewPictureViewController.swift; sourceTree = "<group>"; };
 		BBC4596B1BEE55F600461A97 /* RSHomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSHomePageController.swift; sourceTree = "<group>"; };
-		BBC4596D1BEE56E300461A97 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BBC4596F1BEE58ED00461A97 /* USer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USer.swift; sourceTree = "<group>"; };
+		BBE3F6121BEE9895004ED842 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				87702A6F1BBE324E00FD8713 /* AppDelegate.swift */,
-				BBC4596D1BEE56E300461A97 /* Main.storyboard */,
+				BBE3F6121BEE9895004ED842 /* Main.storyboard */,
 				87702A761BBE324E00FD8713 /* Assets.xcassets */,
 				87702A781BBE324E00FD8713 /* LaunchScreen.storyboard */,
 				87702A7B1BBE324E00FD8713 /* Info.plist */,
@@ -337,10 +337,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE3F6131BEE9895004ED842 /* Main.storyboard in Resources */,
 				87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */,
 				87702A771BBE324E00FD8713 /* Assets.xcassets in Resources */,
 				874EA9241BC4560700B67E63 /* RSHomePageCell.xib in Resources */,
-				BBC4596E1BEE56E300461A97 /* Main.storyboard in Resources */,
 				BBC4595C1BEE26B800461A97 /* RSContactContactView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
