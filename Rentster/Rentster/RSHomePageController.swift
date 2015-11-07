@@ -40,8 +40,9 @@ class RSHomePageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.searchBar.delegate = self
-        
+        self.view.backgroundColor = UIColor.whiteColor()
+        self.tableView.contentInset.top = -50
+                
         let nib = UINib(nibName: "RSHomePageCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "RSHomePageCell")
         self.tableView.tableFooterView = UIView()

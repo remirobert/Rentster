@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ViewHeaderCreation" customModule="Rentster" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="229"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rent anything." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fo9-Pg-aRM">
+                    <rect key="frame" x="8" y="76" width="339" height="26"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="wYg-94-zI6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Propose a service." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZl-Mq-W9R">
+                    <rect key="frame" x="8" y="106" width="339" height="25"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="WHz-gl-Kmd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idea" translatesAutoresizingMaskIntoConstraints="NO" id="xd9-ou-vBy">
+                    <rect key="frame" x="152" y="14" width="50" height="50"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="GJK-4w-5rs"/>
+                    </constraints>
+                </imageView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gTl-Nq-6Ze">
+                    <rect key="frame" x="8" y="159" width="339" height="29"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="eTV-xu-0rd"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Goods"/>
+                        <segment title="Service"/>
+                    </segments>
+                    <color key="tintColor" red="0.23137254900000001" green="0.3921568627" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                </segmentedControl>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="gTl-Nq-6Ze" firstAttribute="top" secondItem="MZl-Mq-W9R" secondAttribute="bottom" constant="28" id="8F7-R5-Ccl"/>
+                <constraint firstItem="MZl-Mq-W9R" firstAttribute="top" secondItem="Fo9-Pg-aRM" secondAttribute="bottom" constant="4" id="SFr-qJ-SYg"/>
+                <constraint firstItem="Fo9-Pg-aRM" firstAttribute="leading" secondItem="MZl-Mq-W9R" secondAttribute="leading" id="SvF-Wr-dvJ"/>
+                <constraint firstAttribute="bottom" secondItem="gTl-Nq-6Ze" secondAttribute="bottom" constant="42" id="Uei-9y-OQ2"/>
+                <constraint firstAttribute="trailing" secondItem="gTl-Nq-6Ze" secondAttribute="trailing" constant="8" id="Z8X-KM-uR8"/>
+                <constraint firstAttribute="trailing" secondItem="gTl-Nq-6Ze" secondAttribute="trailing" constant="8" id="gKa-c4-Li9"/>
+                <constraint firstItem="MZl-Mq-W9R" firstAttribute="leading" secondItem="gTl-Nq-6Ze" secondAttribute="leading" id="idl-DG-a3z"/>
+                <constraint firstItem="MZl-Mq-W9R" firstAttribute="trailing" secondItem="gTl-Nq-6Ze" secondAttribute="trailing" id="laa-gq-jns"/>
+                <constraint firstItem="MZl-Mq-W9R" firstAttribute="trailing" secondItem="Fo9-Pg-aRM" secondAttribute="trailing" id="nXF-Xu-zQi"/>
+                <constraint firstItem="gTl-Nq-6Ze" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="o61-pe-DuY"/>
+                <constraint firstItem="gTl-Nq-6Ze" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="q1D-rM-DrQ"/>
+                <constraint firstItem="Fo9-Pg-aRM" firstAttribute="top" secondItem="xd9-ou-vBy" secondAttribute="bottom" constant="12" id="v0c-hK-WiB"/>
+                <constraint firstItem="xd9-ou-vBy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="vIY-rr-5yo"/>
+                <constraint firstItem="Fo9-Pg-aRM" firstAttribute="centerX" secondItem="xd9-ou-vBy" secondAttribute="centerX" id="x8w-63-b8K"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Z8X-KM-uR8"/>
+                    <exclude reference="gKa-c4-Li9"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="segmentCategory" destination="gTl-Nq-6Ze" id="7WA-B1-PZv"/>
+            </connections>
+            <point key="canvasLocation" x="179.5" y="103.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="idea" width="100" height="100"/>
+    </resources>
+</document>

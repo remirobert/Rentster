@@ -45,6 +45,14 @@ class RSItemDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let headerView = UINib(nibName: "ViewHeaderCreation", bundle: nil).instantiateWithOwner(self, options: nil).first as! ViewHeaderCreation
+        self.tableView.tableHeaderView = headerView        
+        
+        let navigationBarAppearance = self.navigationController?.navigationBar
+        navigationBarAppearance!.setBackgroundImage(UIImage(), forBarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
+        navigationBarAppearance!.shadowImage = UIImage()
+        self.view.backgroundColor = UIColor.whiteColor()
         
         self.title = self.good.title
         

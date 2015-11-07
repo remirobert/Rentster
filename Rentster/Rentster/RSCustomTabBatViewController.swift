@@ -13,8 +13,7 @@ class RSCustomTabBatViewController: UITabBarController {
 
     lazy var addButton: UIButton! = {
         let addButton = UIButton()
-//        addButton.backgroundColor = UIColor.redColor()
-        addButton.setImage(UIImage(named: "add"), forState: UIControlState.Normal)
+        addButton.setImage(UIImage(named: "addButton"), forState: UIControlState.Normal)
         addButton.addTarget(self, action: "createNew", forControlEvents: UIControlEvents.TouchUpInside)
         
         return addButton
@@ -30,8 +29,8 @@ class RSCustomTabBatViewController: UITabBarController {
         self.view.addSubview(self.addButton)
         self.addButton.snp_makeConstraints { (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.width.height.equalTo(43)
-            make.bottom.equalTo(0)
+            make.width.height.equalTo(65)
+            make.bottom.equalTo(-5)
         }
     }
 }

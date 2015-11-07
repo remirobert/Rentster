@@ -25,11 +25,13 @@
 		BBC4595C1BEE26B800461A97 /* RSContactContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC4595A1BEE26B800461A97 /* RSContactContactView.xib */; };
 		BBC459641BEE557700461A97 /* CreateNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC459631BEE557700461A97 /* CreateNewController.swift */; };
 		BBC459661BEE558C00461A97 /* Good.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC459651BEE558C00461A97 /* Good.swift */; };
-		BBC459681BEE55D300461A97 /* RSItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC459671BEE55D300461A97 /* RSItemDetailTableViewController.swift */; };
 		BBC4596A1BEE55E100461A97 /* RSPreviewPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC459691BEE55E100461A97 /* RSPreviewPictureViewController.swift */; };
 		BBC4596C1BEE55F600461A97 /* RSHomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4596B1BEE55F600461A97 /* RSHomePageController.swift */; };
 		BBC459701BEE58ED00461A97 /* USer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4596F1BEE58ED00461A97 /* USer.swift */; };
-		BBE3F6131BEE9895004ED842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE3F6121BEE9895004ED842 /* Main.storyboard */; };
+		BBE3F6151BEE9958004ED842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE3F6141BEE9958004ED842 /* Main.storyboard */; };
+		BBE3F6191BEE9B58004ED842 /* RSItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3F6181BEE9B58004ED842 /* RSItemDetailTableViewController.swift */; };
+		BBE3F61C1BEE9BF1004ED842 /* ViewHeaderCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3F61A1BEE9BF1004ED842 /* ViewHeaderCreation.swift */; };
+		BBE3F61D1BEE9BF1004ED842 /* ViewHeaderCreation.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE3F61B1BEE9BF1004ED842 /* ViewHeaderCreation.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,11 +78,13 @@
 		BBC4595A1BEE26B800461A97 /* RSContactContactView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSContactContactView.xib; sourceTree = "<group>"; };
 		BBC459631BEE557700461A97 /* CreateNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewController.swift; sourceTree = "<group>"; };
 		BBC459651BEE558C00461A97 /* Good.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Good.swift; sourceTree = "<group>"; };
-		BBC459671BEE55D300461A97 /* RSItemDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSItemDetailTableViewController.swift; sourceTree = "<group>"; };
 		BBC459691BEE55E100461A97 /* RSPreviewPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSPreviewPictureViewController.swift; sourceTree = "<group>"; };
 		BBC4596B1BEE55F600461A97 /* RSHomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSHomePageController.swift; sourceTree = "<group>"; };
 		BBC4596F1BEE58ED00461A97 /* USer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USer.swift; sourceTree = "<group>"; };
-		BBE3F6121BEE9895004ED842 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BBE3F6141BEE9958004ED842 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BBE3F6181BEE9B58004ED842 /* RSItemDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSItemDetailTableViewController.swift; sourceTree = "<group>"; };
+		BBE3F61A1BEE9BF1004ED842 /* ViewHeaderCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHeaderCreation.swift; sourceTree = "<group>"; };
+		BBE3F61B1BEE9BF1004ED842 /* ViewHeaderCreation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewHeaderCreation.xib; sourceTree = "<group>"; };
 		C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +134,8 @@
 		874EA91A1BC4436000B67E63 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BBE3F61A1BEE9BF1004ED842 /* ViewHeaderCreation.swift */,
+				BBE3F61B1BEE9BF1004ED842 /* ViewHeaderCreation.xib */,
 				874EA9211BC4560700B67E63 /* RSHomePageCell.swift */,
 				874EA9221BC4560700B67E63 /* RSHomePageCell.xib */,
 				BBC459591BEE26B800461A97 /* RSContactContactView.swift */,
@@ -193,7 +199,7 @@
 		BB8FF5651BBEA9DC00C68647 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BBC459671BEE55D300461A97 /* RSItemDetailTableViewController.swift */,
+				BBE3F6181BEE9B58004ED842 /* RSItemDetailTableViewController.swift */,
 				BBC459691BEE55E100461A97 /* RSPreviewPictureViewController.swift */,
 				BB332FAE1BEDDD5D0040114B /* RSCustomTabBatViewController.swift */,
 				BBC4596B1BEE55F600461A97 /* RSHomePageController.swift */,
@@ -220,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				87702A6F1BBE324E00FD8713 /* AppDelegate.swift */,
-				BBE3F6121BEE9895004ED842 /* Main.storyboard */,
+				BBE3F6141BEE9958004ED842 /* Main.storyboard */,
 				87702A761BBE324E00FD8713 /* Assets.xcassets */,
 				87702A781BBE324E00FD8713 /* LaunchScreen.storyboard */,
 				87702A7B1BBE324E00FD8713 /* Info.plist */,
@@ -337,10 +343,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBE3F6131BEE9895004ED842 /* Main.storyboard in Resources */,
 				87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */,
 				87702A771BBE324E00FD8713 /* Assets.xcassets in Resources */,
+				BBE3F6151BEE9958004ED842 /* Main.storyboard in Resources */,
 				874EA9241BC4560700B67E63 /* RSHomePageCell.xib in Resources */,
+				BBE3F61D1BEE9BF1004ED842 /* ViewHeaderCreation.xib in Resources */,
 				BBC4595C1BEE26B800461A97 /* RSContactContactView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,9 +430,10 @@
 				875931B61BEE2ED700B857AD /* RSLoginController.swift in Sources */,
 				BBC459701BEE58ED00461A97 /* USer.swift in Sources */,
 				7F51BCF81BEB52DC002B0D91 /* RSItemController.swift in Sources */,
+				BBE3F6191BEE9B58004ED842 /* RSItemDetailTableViewController.swift in Sources */,
 				875931BA1BEE32E900B857AD /* RSWelcomeController.swift in Sources */,
 				BBC4595B1BEE26B800461A97 /* RSContactContactView.swift in Sources */,
-				BBC459681BEE55D300461A97 /* RSItemDetailTableViewController.swift in Sources */,
+				BBE3F61C1BEE9BF1004ED842 /* ViewHeaderCreation.swift in Sources */,
 				87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */,
 				BBC459641BEE557700461A97 /* CreateNewController.swift in Sources */,
 				BB332FAC1BEDD78D0040114B /* ContactUser.swift in Sources */,
