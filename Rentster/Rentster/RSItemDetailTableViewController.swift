@@ -26,18 +26,6 @@ class RSItemDetailTableViewController: UITableViewController {
     }()
     
     func displayContactDetail() {
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-//        self.navigationController!.view.addSubview(self.contactView)
-//        self.contactView.snp_makeConstraints { (make) -> Void in
-//            make.width.equalTo(self.view)
-//            make.height.equalTo(50)
-//            make.bottom.equalTo(-49)
-//            make.centerX.equalTo(self.view)
-//        }
-//        self.contactView.layoutSubviews()
     }
     
     override func viewDidLayoutSubviews() {

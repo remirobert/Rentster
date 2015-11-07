@@ -29,6 +29,8 @@ class RSHomePageCell: UITableViewCell {
     func bindCell(good: Good) {
         self.labelTitle.text = good.title
         
+        self.labelPrice.text = "\(good.price!) RMB"
+        
         self.cellImage.image = nil
         good.fectchImage { (image) -> () in
             if let image = image {

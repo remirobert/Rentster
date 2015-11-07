@@ -22,6 +22,7 @@ class RSHomePageController: UIViewController {
     }()
     
     var goods = Array<Good>()
+    var services = Array<Good>()
     
     func fetchData() {
         Good.goodsNearUser { (goods) -> () in
@@ -30,11 +31,26 @@ class RSHomePageController: UIViewController {
                 self.refreshControl.endRefreshing()
             }
             
-            if let goods = goods {
-                self.goods = goods
+            if let resultsGood = goods {
+                self.goods.removeAll()
+                self.services.removeAll()
+                
+                print("result : \(resultsGood)")
+                for currentGood in resultsGood {
+                    if let category = currentGood.category {
+                        switch category {
+                        case GoodCategorie.Good: self.goods.append(currentGood)
+                        case GoodCategorie.Service: self.services.append(currentGood)
+                        }
+                    }
+                }
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    func changeCategory() {
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -42,6 +58,8 @@ class RSHomePageController: UIViewController {
         
         self.view.backgroundColor = UIColor.whiteColor()
         self.tableView.contentInset.top = -50
+        
+        self.segmentCategory.addTarget(self, action: "changeCategory", forControlEvents: UIControlEvents.ValueChanged)
                 
         let nib = UINib(nibName: "RSHomePageCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "RSHomePageCell")
@@ -64,19 +82,32 @@ extension RSHomePageController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RSHomePageCell", forIndexPath: indexPath) as! RSHomePageCell
         
-        cell.bindCell(self.goods[indexPath.row])
+        if self.segmentCategory.selectedSegmentIndex == 0 {
+            cell.bindCell(self.goods[indexPath.row])
+        }
+        else {
+            cell.bindCell(self.services[indexPath.row])
+        }
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.goods.count
+        if self.segmentCategory.selectedSegmentIndex == 0 {
+            return self.goods.count
+        }
+        return self.services.count
     }
 }
 
 extension RSHomePageController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("detailItemSegue", sender: self.goods[indexPath.row])
+        if self.segmentCategory.selectedSegmentIndex == 0 {
+            self.performSegueWithIdentifier("detailItemSegue", sender: self.goods[indexPath.row])
+        }
+        else {
+            self.performSegueWithIdentifier("detailItemSegue", sender: self.services[indexPath.row])
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

@@ -21,6 +21,11 @@ class CreateNewController: UITableViewController {
     @IBOutlet weak var textFieldEnd: UITextField!
     @IBOutlet weak var buttonSave: UIBarButtonItem!
     
+    lazy var headerView: ViewHeaderCreation! = {
+        let headerView = UINib(nibName: "ViewHeaderCreation", bundle: nil).instantiateWithOwner(self, options: nil).first as! ViewHeaderCreation
+        return headerView
+    }()
+    
     @IBAction func dismissController(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -38,6 +43,7 @@ class CreateNewController: UITableViewController {
                 newGood.deposit = Double(deposit.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()))
                 newGood.image = image
                 newGood.descriptionGood = self.textViewDescription.text
+                newGood.category = GoodCategorie.categoryFromIndex(self.headerView.segmentCategory.selectedSegmentIndex)
                 
                 MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                 
@@ -59,7 +65,7 @@ class CreateNewController: UITableViewController {
             alert.show()
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textViewDescription.placeholder = "Description"
@@ -69,8 +75,7 @@ class CreateNewController: UITableViewController {
         self.textFieldDeposit.delegate = self
         self.textFieldPrice.delegate = self
         
-        let headerView = UINib(nibName: "ViewHeaderCreation", bundle: nil).instantiateWithOwner(self, options: nil).first as! ViewHeaderCreation
-        self.tableView.tableHeaderView = headerView
+        self.tableView.tableHeaderView = self.headerView
     }
 }
 

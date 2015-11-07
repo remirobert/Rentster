@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 enum GoodCategorie {
-    case Service, Good
+    case Good, Service
     
     static func categoryFromIndex(index: Int) -> GoodCategorie {
         switch index {
