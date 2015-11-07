@@ -15,6 +15,10 @@ class RSHomePageCell: UITableViewCell {
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var labelSaveDeposit: UILabel!
     
+    override func awakeFromNib() {
+        self.cellImage.layer.masksToBounds = true
+    }
+    
     override func prepareForReuse() {
         self.cellImage.image = nil
         self.labelTitle.text = nil

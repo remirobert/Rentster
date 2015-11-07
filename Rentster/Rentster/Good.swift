@@ -25,15 +25,18 @@ class Good {
 
     var title: String!
     var descriptionGood: String?
+    var price: Double?
+    var deposit: Double?
     var startDate: NSDate?
     var endDate: NSDate?
     var contact: ContactUser!
     var category: GoodCategorie!
-    private var image: UIImage?
+    var image: UIImage?
     private var fileImage: PFFile?
-    
+
     func fectchImage(blockCompletion: ((image:UIImage?)->())) {
         if let image = self.image {
+            print("fetch image locale")
             blockCompletion(image: image)
         }
         else if let fileImage = self.fileImage {
@@ -55,9 +58,9 @@ class Good {
     private func createParseObject() -> PFObject {
         let newObject = PFObject(className: "Good")
         
-        if let title = self.title {
-            newObject["title"] = title
-        }
+        newObject["title"] = self.title
+        newObject["price"] = self.price
+        newObject["deposit"] = self.deposit
         if let description = self.descriptionGood {
             newObject["description"] = description
         }
@@ -67,7 +70,7 @@ class Good {
         if let endDate = self.endDate {
             newObject["end"] = endDate
         }
-        if let image = self.image, let dataImage = UIImageJPEGRepresentation(image, 0.5) {
+        if let image = self.image, let dataImage = UIImageJPEGRepresentation(image, 0.1) {
             newObject["image"] = PFFile(data: dataImage)
         }
         if let category = self.category {
@@ -81,6 +84,12 @@ class Good {
         if let title = object["title"] as? String {
             newGood.title = title
         }
+        if let price = object["price"] as? Double {
+            newGood.price = price
+        }
+        if let deposit = object["deposit"] as? Double {
+            newGood.deposit = deposit
+        }
         if let description = object["description"] as? String {
             newGood.descriptionGood = description
         }
@@ -90,7 +99,7 @@ class Good {
         if let end = object["end"] as? NSDate {
             newGood.endDate = end
         }
-        if let fileImage = object["picture"] as? PFFile {
+        if let fileImage = object["image"] as? PFFile {
             newGood.fileImage = fileImage
         }
         if let category = object["category"] as? Int {
@@ -141,6 +150,8 @@ extension Good {
     
     class func createNewGood(good: Good, blockCompletion: ((good:Good?)->())) {
         let goodObject = good.createParseObject()
+        
+        print("new good : \(goodObject)")
         
         PFGeoPoint.geoPointForCurrentLocationInBackground({ (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
             if let geoPoint = geoPoint where error == nil {

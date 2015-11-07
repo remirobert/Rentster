@@ -50,6 +50,12 @@ class RSHomePageController: UIViewController {
         self.tableView.addSubview(self.refreshControl)
         self.fetchData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailItemSegue" {
+            (segue.destinationViewController as! RSItemDetailTableViewController).good = sender as! Good
+        }
+    }
 }
 
 extension RSHomePageController: UITableViewDataSource {
@@ -69,7 +75,7 @@ extension RSHomePageController: UITableViewDataSource {
 extension RSHomePageController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("detailItemSegue", sender: nil)
+        self.performSegueWithIdentifier("detailItemSegue", sender: self.goods[indexPath.row])
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

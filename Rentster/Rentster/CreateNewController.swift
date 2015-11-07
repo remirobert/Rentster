@@ -7,73 +7,135 @@
 //
 
 import UIKit
+import MBProgressHUD
+import SAMTextView
 
-class CreateNewController: UITableViewController,UIActionSheetDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class CreateNewController: UITableViewController {
 
-    @IBOutlet weak var wechatField: UITextField!
-    @IBOutlet weak var phoneField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var imageViewPicture: UIImageView!
+    @IBOutlet weak var textFieldTitle: UITextField!
+    @IBOutlet weak var textFieldPrice: UITextField!
+    @IBOutlet weak var textFieldDeposit: UITextField!
+    @IBOutlet weak var textViewDescription: UITextField!
+    @IBOutlet weak var textFieldStart: UITextField!
+    @IBOutlet weak var textFieldEnd: UITextField!
+    @IBOutlet weak var buttonSave: UIBarButtonItem!
     
-    @IBOutlet weak var itemNameField: UITextField!
-    @IBOutlet weak var itemPriceField: UITextField!
-    @IBOutlet weak var safetyDepositField: UITextField!
-    @IBOutlet weak var pickDateField: UITextField!
-    @IBOutlet weak var dropDateField: UITextField!
-
-    @IBOutlet weak var descView: UITextView!
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        descView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).CGColor
-        descView.layer.borderWidth = 1
-        descView.layer.cornerRadius = 5
-        descView.layer.masksToBounds = true
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    @IBAction func dismissController(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
-
-    // MARK: - Table view data source
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-//
-//        // Configure the cell...
-//        
-//        print(indexPath.row)
-//
-//        return cell
-//    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
-        if(indexPath.section == 0){
-            if(indexPath.row == 0){
-                let actionSheet = UIActionSheet(title: "Pick a Picture", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Album", "Camera")
-                actionSheet.showInView(self.view)
-
-            }
+    @IBAction func saveNewGood(sender: AnyObject) {
+        self.view.endEditing(true)
+        if let image = self.imageViewPicture.image,
+            let title = self.textFieldTitle.text,
+            let price = self.textFieldPrice.text,
+            let deposit = self.textFieldDeposit.text {
+                
+                let newGood = Good()
+                newGood.title = title
+                newGood.price = Double(price.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()))
+                newGood.deposit = Double(deposit.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()))
+                newGood.image = image
+                newGood.descriptionGood = self.textViewDescription.text
+                
+                MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                
+                Good.createNewGood(newGood, blockCompletion: { (good) -> () in
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                    })
+                    if let _ = good {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    else {
+                        let alert = UIAlertView(title: "Error creating new good.", message: "Check your internet connection, and try again.", delegate: nil, cancelButtonTitle: "Ok")
+                        alert.show()
+                    }
+                })
+        }
+        else {
+            let alert = UIAlertView(title: "You need to fill the required filds.", message: nil, delegate: nil, cancelButtonTitle: "Ok")
+            alert.show()
         }
     }
     
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        switch buttonIndex {
-            case 1:
-                photoFromAlbum()
-            print("album")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.textViewDescription.placeholder = "Description"
+        self.textFieldTitle.delegate = self
+        self.textFieldStart.delegate = self
+        self.textFieldEnd.delegate = self
+        self.textFieldDeposit.delegate = self
+        self.textFieldPrice.delegate = self
+    }
+}
+
+extension CreateNewController: UITextFieldDelegate, UITextViewDelegate {
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if string == "\n" {
+            textField.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+}
+
+extension CreateNewController {
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 && indexPath.section == 0 {
+            let controller = UIAlertController(title: "Choose a picture", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
             
-            case 2:
-                print("cam")
-                photoFromCamera()
+            let galleryAction = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
+                self.photoFromAlbum()
+            })
+            let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
+                self.photoFromCamera()
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
             
-            default:
-                break
+            controller.addAction(galleryAction)
+            controller.addAction(cameraAction)
+            controller.addAction(cancelAction)
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+    }
+}
+
+extension CreateNewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if picker.sourceType == UIImagePickerControllerSourceType.Camera {
+            let imageToSave: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            self.imageViewPicture.image = imageToSave
+        }
+        else {
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            self.imageViewPicture.image = image
+        }
+        self.imageViewPicture.backgroundColor = UIColor.whiteColor()
+        picker.dismissViewControllerAnimated(true, completion:nil)
+    }
+    
+    func photoFromCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.allowsEditing = true
+            self.presentViewController(picker, animated: true, completion:nil)
+        }else {
+            print("Can't Find the Camera")
         }
     }
     
@@ -90,95 +152,4 @@ class CreateNewController: UITableViewController,UIActionSheetDelegate, UIImageP
             print("Error loading the Album")
         }
     }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
-        print(info)
-        
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        
-        if picker.sourceType == UIImagePickerControllerSourceType.Camera {
-            let imageToSave: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            imageView.image = imageToSave
-        }
-        
-        picker.dismissViewControllerAnimated(true, completion: {
-            () -> Void in
-        })
-    }
-    
-    func photoFromCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
-            
-            let picker = UIImagePickerController()
-            
-            picker.delegate = self
-            
-            picker.sourceType = UIImagePickerControllerSourceType.Camera
-            
-            picker.allowsEditing = true
-            
-            self.presentViewController(picker, animated: true, completion: { () -> Void in
-                
-            })
-        }else {
-            print("Can't Find the Camera")
-        }
-    }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

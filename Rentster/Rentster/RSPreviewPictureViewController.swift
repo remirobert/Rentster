@@ -10,6 +10,9 @@ import UIKit
 
 class RSPreviewPictureViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    var image: UIImage!
+    
     func dismissController() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -17,6 +20,7 @@ class RSPreviewPictureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.imageView.image = self.image
         let tapGesture = UITapGestureRecognizer(target: self, action: "dismissController")
         self.view.addGestureRecognizer(tapGesture)
     }
