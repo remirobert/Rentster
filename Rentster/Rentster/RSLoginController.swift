@@ -25,6 +25,23 @@ class RSLoginController: UIViewController {
     }
     
     @IBAction func login(sender: AnyObject) {
+        let email = emailField.text
+        let password = passwordField.text
+        
+        if (email as! NSString).length < 6 {
+            invalidInput("E-mail")
+            return
+        }
+        if (password as! NSString).length < 6 {
+            invalidInput("Password")
+            return
+        }
+        //do any connecting thing
+    }
+    
+    func invalidInput(type:String) {
+        let alert = UIAlertController(title: "Invalid Input", message: "Please Input A Valid "+type, preferredStyle: UIAlertControllerStyle.Alert)
+        self.presentViewController(alert, animated: true, completion: {})
     }
 
     @IBAction func back(sender: AnyObject) {
