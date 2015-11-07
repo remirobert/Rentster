@@ -9,6 +9,5 @@
 import UIKit
 
 class RSContactContactView: UIView {
-
     @IBOutlet weak var buttonContact: UIButton!
 }
