@@ -16,6 +16,7 @@ class RSCustomTabBatViewController: UITabBarController {
 //        addButton.backgroundColor = UIColor.redColor()
         addButton.setImage(UIImage(named: "add"), forState: UIControlState.Normal)
         addButton.addTarget(self, action: "createNew", forControlEvents: UIControlEvents.TouchUpInside)
+        
         return addButton
     }()
     

@@ -12,6 +12,9 @@
 		874EA9231BC4560700B67E63 /* RSHomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874EA9211BC4560700B67E63 /* RSHomePageCell.swift */; };
 		874EA9241BC4560700B67E63 /* RSHomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 874EA9221BC4560700B67E63 /* RSHomePageCell.xib */; };
 		875931B01BEDE11C00B857AD /* CreateNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875931AF1BEDE11C00B857AD /* CreateNewController.swift */; };
+		875931B61BEE2ED700B857AD /* RSLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875931B51BEE2ED700B857AD /* RSLoginController.swift */; settings = {ASSET_TAGS = (); }; };
+		875931B81BEE2F0800B857AD /* RSRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875931B71BEE2F0800B857AD /* RSRegisterController.swift */; settings = {ASSET_TAGS = (); }; };
+		875931BA1BEE32E900B857AD /* RSWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875931B91BEE32E900B857AD /* RSWelcomeController.swift */; settings = {ASSET_TAGS = (); }; };
 		87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87702A6F1BBE324E00FD8713 /* AppDelegate.swift */; };
 		87702A771BBE324E00FD8713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87702A761BBE324E00FD8713 /* Assets.xcassets */; };
 		87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87702A781BBE324E00FD8713 /* LaunchScreen.storyboard */; };
@@ -51,6 +54,9 @@
 		874EA9211BC4560700B67E63 /* RSHomePageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSHomePageCell.swift; sourceTree = "<group>"; };
 		874EA9221BC4560700B67E63 /* RSHomePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RSHomePageCell.xib; sourceTree = "<group>"; };
 		875931AF1BEDE11C00B857AD /* CreateNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewController.swift; sourceTree = "<group>"; };
+		875931B51BEE2ED700B857AD /* RSLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSLoginController.swift; sourceTree = "<group>"; };
+		875931B71BEE2F0800B857AD /* RSRegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSRegisterController.swift; sourceTree = "<group>"; };
+		875931B91BEE32E900B857AD /* RSWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSWelcomeController.swift; sourceTree = "<group>"; };
 		87702A6C1BBE324E00FD8713 /* Rentster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rentster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87702A6F1BBE324E00FD8713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87702A761BBE324E00FD8713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +197,9 @@
 				87893B7C1BC0EA4F00DD0EF8 /* RSHomePageController.swift */,
 				7F51BCF71BEB52DC002B0D91 /* RSItemController.swift */,
 				875931AF1BEDE11C00B857AD /* CreateNewController.swift */,
+				875931B51BEE2ED700B857AD /* RSLoginController.swift */,
+				875931B71BEE2F0800B857AD /* RSRegisterController.swift */,
+				875931B91BEE32E900B857AD /* RSWelcomeController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -407,8 +416,11 @@
 				BB332FAF1BEDDD5D0040114B /* RSCustomTabBatViewController.swift in Sources */,
 				874EA9231BC4560700B67E63 /* RSHomePageCell.swift in Sources */,
 				87893B7D1BC0EA4F00DD0EF8 /* RSHomePageController.swift in Sources */,
+				875931B81BEE2F0800B857AD /* RSRegisterController.swift in Sources */,
 				875931B01BEDE11C00B857AD /* CreateNewController.swift in Sources */,
+				875931B61BEE2ED700B857AD /* RSLoginController.swift in Sources */,
 				7F51BCF81BEB52DC002B0D91 /* RSItemController.swift in Sources */,
+				875931BA1BEE32E900B857AD /* RSWelcomeController.swift in Sources */,
 				BBC4595B1BEE26B800461A97 /* RSContactContactView.swift in Sources */,
 				BBC4595F1BEE26DC00461A97 /* RSItemDetailTableViewController.swift in Sources */,
 				87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */,
