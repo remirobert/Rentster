@@ -31,6 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("ghMwfuKhCQhu5wzkOVdsqnLTgPCJSLoJt4OkT8G7", clientKey: "o2dVH9OQ9umCLcNnZL5oTmPLJg4U1l0FJ0wt573i")
         self.applicationAppaerence()
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        var controller: UIViewController!
+        
+        if let _ = PFUser.currentUser() {
+            controller = UIStoryboard.instanceController("mainController")
+        }
+        else {
+            controller = UIStoryboard.instanceController("loginController")
+        }
+        
+        self.window?.rootViewController = controller
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 }

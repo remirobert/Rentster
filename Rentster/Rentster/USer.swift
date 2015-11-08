@@ -30,6 +30,20 @@ class User {
 
 extension User {
 
+    class func getUserPosts(blockCompletion:((goods:[Good]?)->())) {
+        let querry = PFQuery(className: "Good")
+        querry.cachePolicy = PFCachePolicy.CacheThenNetwork
+        querry.whereKey("creator", equalTo: PFUser.currentUser()!)
+        querry.findObjectsInBackgroundWithBlock { (results: [PFObject]?, error: NSError?) -> Void in
+            if let results = results where error == nil {
+                blockCompletion(goods:results.map {return Good.buildGood($0)})
+            }
+            else {
+                blockCompletion(goods:nil)
+            }
+        }
+    }
+    
     class func login(email: String, password: String, blockCompletion:((user: User?)->())) {
         PFUser.logInWithUsernameInBackground(email, password: password) { (user: PFUser?, error: NSError?) -> Void in
             if let user = user where error == nil {

@@ -61,6 +61,7 @@ class Good {
         newObject["title"] = self.title
         newObject["price"] = self.price
         newObject["deposit"] = self.deposit
+        newObject["creator"] = PFUser.currentUser()!
         if let description = self.descriptionGood {
             newObject["description"] = description
         }

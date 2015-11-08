@@ -27,7 +27,6 @@ class RSPreviewPictureViewController: UIViewController {
     func dismissController() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

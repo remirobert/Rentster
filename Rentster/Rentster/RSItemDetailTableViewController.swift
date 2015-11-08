@@ -13,11 +13,26 @@ import SAMTextView
 class RSItemDetailTableViewController: UITableViewController {
 
     var good: Good!
-    @IBOutlet weak var imagePreviewPicture: UIImageView!
-    @IBOutlet weak var textViewDescription: SAMTextView!
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var labelStart: UILabel!
     @IBOutlet weak var labelEnd: UILabel!
+    
+
+    lazy var headerViewDetail: ViewDetailsHeader! = {
+        let headerViewDetail = UINib(nibName: "ViewDetailsHeader", bundle: nil).instantiateWithOwner(self, options: nil).first as! ViewDetailsHeader
+        headerViewDetail.imageView.image = nil
+        headerViewDetail.imageView.layer.masksToBounds = true
+        self.good.fectchImage { (image) -> () in
+            if let image = image {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    headerViewDetail.imageView.image = image
+                })
+            }
+        }
+        let tapGesture = UITapGestureRecognizer(target: self, action: "displayContactDetail")
+        headerViewDetail.addGestureRecognizer(tapGesture)
+        return headerViewDetail
+    }()
     
     lazy var contactView: RSContactContactView! = {
         let contactView = UINib(nibName: "RSContactContactView", bundle: nil).instantiateWithOwner(self, options: nil).first as! RSContactContactView
@@ -26,6 +41,7 @@ class RSItemDetailTableViewController: UITableViewController {
     }()
     
     func displayContactDetail() {
+        self.performSegueWithIdentifier("previewPictureSegue", sender: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,37 +50,16 @@ class RSItemDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        let navigationBarAppearance = self.navigationController?.navigationBar
-        navigationBarAppearance!.setBackgroundImage(UIImage(), forBarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
-        navigationBarAppearance!.shadowImage = UIImage()
         self.view.backgroundColor = UIColor.whiteColor()
         
         self.title = self.good.title
-        
-        self.imagePreviewPicture.image = nil
-        self.imagePreviewPicture.layer.masksToBounds = true
-        self.good.fectchImage { (image) -> () in
-            if let image = image {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.imagePreviewPicture.image = image
-                })
-            }
-        }
-        
+                
         if let price = self.good.price {
             self.labelPrice.text = "\(price) RMB"
         }
         else {
             self.labelPrice.text = "NA"
         }
-        
-//        if let description = self.good.descriptionGood {
-//            self.textViewDescription.text = description
-//        }
-//        else {
-//            self.textViewDescription.placeholder = "No description"
-//        }
         
         if let start = self.good.startDate {
             self.labelStart.text = "Start date : \(start)"
@@ -79,26 +74,18 @@ class RSItemDetailTableViewController: UITableViewController {
         else {
             self.labelEnd.text = "End date : NA"
         }
-        
-        self.imagePreviewPicture.userInteractionEnabled = false
-        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 40, 0)        
+
+        self.tableView.tableHeaderView = self.headerViewDetail
+        let footer = UINib(nibName: "ViewFooterDetailItem", bundle: nil).instantiateWithOwner(self, options: nil).first as! UIView
+        self.tableView.tableFooterView = footer
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "previewPictureSegue" {
-            (segue.destinationViewController as! RSPreviewPictureViewController).image = sender as! UIImage
+            (segue.destinationViewController as! RSPreviewPictureViewController).image = self.headerViewDetail.imageView.image
             (segue.destinationViewController as! RSPreviewPictureViewController).decriptionGood = self.good.descriptionGood
         }
     }
-}
-
-extension RSItemDetailTableViewController {
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            if let image = self.imagePreviewPicture.image {
-                self.performSegueWithIdentifier("previewPictureSegue", sender: image)
-            }
-        }
-    }
+    tableView(tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int)
 }
