@@ -781,6 +781,66 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="xMV-MI-31w">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="fOI-qh-ebk">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fOI-qh-ebk" id="JF3-UG-a9b">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="logout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8n-lA-fOd">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="109" id="2kl-xP-Wqi"/>
+                                                        <constraint firstAttribute="height" constant="21" id="pWe-2o-tf4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="0.79366134749999995" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="2kl-xP-Wqi"/>
+                                                            <exclude reference="pWe-2o-tf4"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="2kl-xP-Wqi"/>
+                                                            <include reference="pWe-2o-tf4"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="O8n-lA-fOd" firstAttribute="centerX" secondItem="JF3-UG-a9b" secondAttribute="centerX" id="U9L-WT-aUg"/>
+                                                <constraint firstItem="O8n-lA-fOd" firstAttribute="centerY" secondItem="JF3-UG-a9b" secondAttribute="centerY" id="bve-wX-FYH"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="O8n-lA-fOd"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="U9L-WT-aUg"/>
+                                                    <exclude reference="bve-wX-FYH"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="O8n-lA-fOd"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="U9L-WT-aUg"/>
+                                                    <include reference="bve-wX-FYH"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="cP6-pJ-eaM" id="FQ0-wB-ni3"/>

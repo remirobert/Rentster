@@ -104,6 +104,18 @@ extension RSProfileTableViewController: UITextFieldDelegate {
 
 extension RSProfileTableViewController {
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 2 && indexPath.row == 0 {
+            PFUser.logOutInBackgroundWithBlock({ (error: NSError?) -> Void in
+                if error == nil {
+                    if let instance = UIApplication.sharedApplication().delegate {
+                        instance.window!?.rootViewController = UIStoryboard.instanceController("loginController")
+                    }
+                }
+            })
+        }
+    }
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
     }
