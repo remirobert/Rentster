@@ -90,6 +90,45 @@ class RSItemDetailTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 && indexPath.row == 0 {
+
+            if let creator = self.good.creator {
+                creator.fetchIfNeededInBackgroundWithBlock({ (user: PFObject?, _) -> Void in
+                    if let user = user {
+                        let alertController = UIAlertController(title: "Contact", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+                        
+                        let wechat = user["wechat"]
+                        let email = user["username"]
+                        let phone = user["phone"]
+                        
+                        let wechatAction = UIAlertAction(title: "Wechat", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
+                            self.presentWechat()
+                        })
+                        
+                        let emailAction = UIAlertAction(title: "email", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
+                            self.presentMailController()
+                        })
+                        
+                        let phoneAction = UIAlertAction(title: "phone", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
+                            self.presentPhoneCall(phone as! String)
+                        })
+                        
+                        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+
+                        if wechat != nil {
+                            alertController.addAction(wechatAction)
+                        }
+                        if email != nil {
+                            alertController.addAction(emailAction)
+                        }
+                        if phone != nil {
+                            alertController.addAction(phoneAction)
+                        }
+                        alertController.addAction(cancelAction)
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
+                })
+            }
             self.presentMailController()
         }
     }
@@ -97,10 +136,23 @@ class RSItemDetailTableViewController: UITableViewController {
 
 extension RSItemDetailTableViewController: MFMailComposeViewControllerDelegate {
     
+    func presentWechat() {
+        if let wechat = PFUser.currentUser()!["wechat"] as? String {
+            UIPasteboard.generalPasteboard().string = wechat
+            
+        }
+    }
+    
+    func presentPhoneCall(phoneNumber: String) {
+        if let phone = PFUser.currentUser()!["phone"] as? String {
+            let phoneNumber = "tel:" + phone
+            UIApplication.sharedApplication().openURL(NSURL(string: phoneNumber)!)
+        }
+    }
+    
     func presentMailController() {
         let mailController = MFMailComposeViewController()
         mailController.setSubject("[R]enty : \(self.good.title)")
-        print("self.good : \(self.good.creator)")
         
         self.good.creator.fetchIfNeededInBackgroundWithBlock { (user: PFObject?, error: NSError?) -> Void in
             if let user = user {

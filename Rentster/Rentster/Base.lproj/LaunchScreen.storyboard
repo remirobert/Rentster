@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="276" id="90a-mB-QgT"/>
                                     <constraint firstAttribute="height" constant="118" id="DpP-rh-b2z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="75"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="74"/>
                                 <color key="textColor" red="0.23137254900000001" green="0.3921568627" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
