@@ -139,7 +139,6 @@ extension RSItemDetailTableViewController: MFMailComposeViewControllerDelegate {
     func presentWechat() {
         if let wechat = PFUser.currentUser()!["wechat"] as? String {
             UIPasteboard.generalPasteboard().string = wechat
-            
         }
     }
     
@@ -147,6 +146,9 @@ extension RSItemDetailTableViewController: MFMailComposeViewControllerDelegate {
         if let phone = PFUser.currentUser()!["phone"] as? String {
             let phoneNumber = "tel:" + phone
             UIApplication.sharedApplication().openURL(NSURL(string: phoneNumber)!)
+            
+            let alertView = UIAlertView(title: "Wechat id copied !", message: "Now open the wechat app, and contact, the id.", delegate: nil, cancelButtonTitle: "Ok")
+            alertView.show()
         }
     }
     

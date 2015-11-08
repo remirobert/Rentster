@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Renty</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+        <style type="text/css">
+            div#container {}
+            div#float {position:fixed; top: 30%}
+            div.float_content {text-align:center; margin-top: 3px}
+            div#scroll_down {position:fixed; left: 53%; top: 90%}
+            div#header {background-color:#FCFCFC; text-align:center}
+            div.add_email {}
+            div#content_1 {background-color:#F0F0F0; text-align:center}
+            div#content_2 {background-color:#FCFCFC; text-align:center}
+            div#content_3 {background-color:#F0F0F0; text-align:center}
+            div#content_4 {background-color:#F0F0F0; text-align:center}
+            div#content_5 {background-color:#FCFCFC; text-align:center}
+            div#content_6 {background-color:#F0F0F0; text-align:center}
+            div#content_7 {background-color:#F0F0F0; text-align:center}
+        </style>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+        <script src="js/libs/jquery-scrollTo/jquery.scrollTo.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var width = document.body.clientWidth;
+                $('#img_1').css("width", width);
+                $('#img_2').css("width", width);
+                $('#img_3').css("width", width);
+                $('#img_4').css("width", width);
+                $('#img_5').css("width", width);
+                $('#img_6').css("width", width);
+                $('#img_7').css("width", width);
+                $('#img_8').css("width", width);
+                $('.float_content').css("margin-left", width - 80);
+                $('#add_email_dialog').hide();
+                $('#add_email_content').hide();
+            });
+            
+            $(function(){
+                var width = document.body.clientWidth;
+                var pos = 0;
+                $("#nav_header").click(function(){
+                    str = '#circle_';
+                    for (var i = 1; i < 9; i++){
+                        var id = str + i;
+                        if(i == 1){
+                            $(id).attr({src: 'img/hack_circle_full.png'});
+                        } else {
+                            $(id).attr({src: 'img/hack_circle_empty.png'});
+                        }
+                    }
+                    pos = 0;
+                    $.scrollTo('#header',500);
+                });
+                $("#nav_content_1").click(function(){
+                    var str = "#circle_";
+                    for (var i = 1; i < 9; i++){
+                        var id = str + i;
+                        if(i == 2){
+                            $(id).attr({src: 'img/hack_circle_full.png'});
+                        } else {
+                            $(id).attr({src: 'img/hack_circle_empty.png'});
+                        }
+                    }
+                    pos = 1;
+                    $.scrollTo('#content_1',800);
+                });
+                $("#nav_content_2").click(function(){
+                    str = '#circle_';
+                    for (var i = 1; i < 9; i++){
+                        var id = str + i;
+                        if(i == 3){
+                            $(id).attr({src: 'img/hack_circle_full.png'});
+                        } else {
+                            $(id).attr({src: 'img/hack_circle_empty.png'});
+                        }
+                    }
+                    pos = 2;
+                    $.scrollTo('#content_2',800);
+                });
+                $("#nav_content_3").click(function(){
+                    str = '#circle_';
+                    for (var i = 1; i < 9; i++){
+                        var id = str + i;
+                        if(i == 4){
+                            $(id).attr({src: 'img/hack_circle_full.png'});
+                        } else {
+                            $(id).attr({src: 'img/hack_circle_empty.png'});
+                        }
+                    }
+                    pos = 3;
+                    $.scrollTo('#content_3',800);
+                });
+                $("#nav_content_4").click(function(){
+                    str = '#circle_';
+                    for (var i = 1; i < 9; i++){
+                        var id = str + i;
+                        if(i == 5){
+                            $(id).attr({src: 'img/hack_circle_full.png'});
+                        } else {
+                            $(id).attr({src: 'img/hack_circle_empty.png'});
+                        }
+                    }
+                    pos = 4;
+                    $.scrollTo('#content_4',800);
+                });
+                $("#nav_content_5").click(function(){
+                    str = '#circle_';
+                    for (var i = 1; i < 9; i++){
+                        var id = str + i;
+                        if(i == 6){
+                            $(id).attr({src: 'img/hack_circle_full.png'});
+                        } else {
+                            $(id).attr({src: 'img/hack_circle_empty.png'});
+                        }
+                    }
+                    pos = 5;
+                    $.scrollTo('#content_5',800);
+                });
+                $("#nav_content_6").click(function(){
+                    str = '#circle_';
+                    for (var i = 1; i < 9; i++){
+                        var id = str + i;
+                        if(i == 7){
+                            $(id).attr({src: 'img/hack_circle_full.png'});
+                        } else {
+                            $(id).attr({src: 'img/hack_circle_empty.png'});
+                        }
+                    }
+                    pos = 6;
+                    $.scrollTo('#content_6',800);
+                });
+                $("#nav_content_7").click(function(){
+                    str = '#circle_';
+                    for (var i = 1; i < 9; i++){
+                        var id = str + i;
+                        if(i == 8){
+                            $(id).attr({src: 'img/hack_circle_full.png'});
+                        } else {
+                            $(id).attr({src: 'img/hack_circle_empty.png'});
+                        }
+                    }
+                    pos = 7;
+                    $.scrollTo('#content_7',800);
+                });
+                $("#scroll_down").click(function(){
+                    var str = '#content_';
+                    pos++;
+                    str = str + pos;
+                    for (var i = 0; i < 9; i++){
+                        var id = '#circle_' + i;
+                        if(i == pos + 1){
+                            $(id).attr({src: './img/hack_circle_full.png'});
+                        } else {
+                            $(id).attr({src: './img/hack_circle_empty.png'});
+                        }
+                    }
+                    $.scrollTo(str ,800);
+                });
+                $("#add_email_button").click(function(){
+                    $('#add_email_dialog').toggle();
+                    $('#add_email_content').toggle();
+                });
+                $("#add").click(function(){
+                    fso = new ActiveXObject("Scripting.FileSystemObject");
+                    f = fso.OpenTextFile('./txt/email.txt',8,true);
+                    f.WriteLine("filecontent");
+                    f.Close();
+                    alert("ok");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">  
+            <div id="float">
+                <div class="float_content">
+                    <a id="nav_header"><img id="circle_1" src="./img/hack_circle_full.png" alt="" style="width: 20px; height: 20px"/></a>
+                </div>
+                <div class="float_content">
+                    <a id="nav_content_1"><img id="circle_2" src="./img/hack_circle_empty.png" alt="" style="width: 20px; height: 20px"/></a>
+                </div>
+                <div class="float_content">
+                    <a id="nav_content_2"><img id="circle_3" src="./img/hack_circle_empty.png" alt="" style="width: 20px; height: 20px"/></a>
+                </div>
+                <div class="float_content">
+                    <a id="nav_content_3"><img id="circle_4" src="./img/hack_circle_empty.png" alt="" style="width: 20px; height: 20px"/></a>
+                </div>
+                <div class="float_content">
+                    <a id="nav_content_4"><img id="circle_5" src="./img/hack_circle_empty.png" alt="" style="width: 20px; height: 20px"/></a>
+                </div>
+                <div class="float_content">
+                    <a id="nav_content_5"><img id="circle_6" src="./img/hack_circle_empty.png" alt="" style="width: 20px; height: 20px"/></a>
+                </div>
+                <div class="float_content">
+                    <a id="nav_content_6"><img id="circle_7" src="./img/hack_circle_empty.png" alt="" style="width: 20px; height: 20px"/></a>
+                </div>
+                <div class="float_content">
+                    <a id="nav_content_7"><img id="circle_8" src="./img/hack_circle_empty.png" alt="" style="width: 20px; height: 20px"/></a>
+                </div>
+            </div>
+            <div id="scroll_down">
+                <a id="scroll_down"><img src="img/hack_content_down.png" style="width: 5%; opacity: 0.5"/></a>
+            </div>
+            <div id="header" style="text-align: center">
+                <!--1st-->
+                <img id="img_1" src="img/hack_1.jpg" alt=""/>
+                <div style="position: absolute; z-index: 2; top: 90%; left: 50%; text-align: center">
+                    <a id="add_email_button" style="cursor: pointer"><font size="4" color="white">Add your Email</font></a><br>
+                </div>
+                <div id="add_email_dialog" style="position: absolute; z-index: 2; top: 94%; left: 9%; text-align: center">
+                    <img src="img/hack_add_email.png" alt="" style="width: 18%; opacity: 0.8"/>
+                </div>
+                <div id="add_email_content" style="position: absolute; z-index: 8; top: 100%; left: 48%; text-align: center">
+                	<form action="do.add" method="post">
+                    	<font color="white">email:</font><input type='text' name="email" style='border:none; border-bottom:white solid 1px; background-color: transparent; color: #fff'>
+                    	<br><br>
+                    	<input type="submit" id=”add“ value="ok" style="color: white; background-color: transparent; border:none;">
+                	</form>
+                </div>
+            </div>
+            <div id="content_1">
+                <!--2nd-->
+                <img id="img_2" src="img/hack_2.jpg" alt=""/>
+            </div>
+            <div id="content_2">
+                <!--3rd-->
+                <img id="img_3" src="img/hack_3.jpg" alt=""/>
+            </div>
+            <div id="content_3">
+                <!--4th-->
+                <img id="img_4" src="img/hack_4.png" alt=""/>
+            </div>
+            <div id="content_4">
+                <!--4th-->
+                <img id="img_5" src="img/hack_5.jpg" alt=""/>
+            </div>
+            <div id="content_5">
+                <!--4th-->
+                <img id="img_6" src="img/hack_6.jpg" alt=""/>
+            </div>
+            <div id="content_6">
+                <!--4th-->
+                <img id="img_7" src="img/hack_7.jpg" alt=""/>
+            </div>
+            <div id="content_7">
+                4th
+                <img id="img_8" src="img/hack_8.jpg" alt=""/>
+            </div>
+        </div>
+    </body>
+</html>
