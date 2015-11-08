@@ -36,7 +36,18 @@ class RSProfileTableViewController: UITableViewController {
     }
     
     @IBAction func saveProfile(sender: AnyObject) {
+        let fileImage = PFFile(data: UIImageJPEGRepresentation(self.header.imageView.image!, 0.1)!)
+        PFUser.currentUser()!["picture"] = fileImage
+        PFUser.currentUser()!["wechat"] = self.textFieldWechat.text
+        PFUser.currentUser()!["phone"] = self.textFieldPhone.text
+        PFUser.currentUser()!["name"] = self.textFieldName.text
         
+        PFUser.currentUser()?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+            if error != nil {
+                let alert = UIAlertView(title: "Error save profile", message: nil, delegate: nil, cancelButtonTitle: "Ok")
+                alert.show()
+            }
+        })
     }
     
     override func viewDidLoad() {
@@ -49,7 +60,7 @@ class RSProfileTableViewController: UITableViewController {
 
         self.textFieldEmail.userInteractionEnabled = false
         
-        self.textFieldEmail.text = PFUser.currentUser()!["name"] as? String
+        self.textFieldEmail.text = PFUser.currentUser()!["username"] as? String
         
         if let wechat = PFUser.currentUser()!["wechat"] as? String {
             self.textFieldWechat.text = wechat
@@ -66,8 +77,17 @@ class RSProfileTableViewController: UITableViewController {
         self.header = UINib(nibName: "ViewHeaderProfile", bundle: nil).instantiateWithOwner(self, options: nil).first as! ViewHeaderProfile
         self.tableView.tableHeaderView = self.header
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: "")
-        header.imageView.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: "editPicture")
+        self.header.addGestureRecognizer(tapGesture)
+        
+        if let fileImage = PFUser.currentUser()!["picture"] as? PFFile {
+            fileImage.getDataInBackgroundWithBlock({ (data: NSData?, _) -> Void in
+                if let data = data {
+                    let image = UIImage(data: data)
+                    self.header.imageView.image = image
+                }
+            })
+        }
     }
 }
 

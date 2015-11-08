@@ -664,7 +664,7 @@
                                                         <constraint firstAttribute="width" constant="346" id="Lcs-ZJ-sQE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="48A-xg-cx9"/>
