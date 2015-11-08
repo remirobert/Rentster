@@ -36,6 +36,12 @@
 		BBE3F6271BEEBE09004ED842 /* ViewFooterDetailItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE3F6261BEEBE09004ED842 /* ViewFooterDetailItem.xib */; };
 		BBE3F6291BEEC956004ED842 /* UIStoryboardInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3F6281BEEC956004ED842 /* UIStoryboardInstance.swift */; };
 		BBE3F62B1BEECD26004ED842 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE3F62A1BEECD26004ED842 /* MessageUI.framework */; };
+		BBE3F62D1BEEE103004ED842 /* ViewHeaderProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE3F62C1BEEE103004ED842 /* ViewHeaderProfile.xib */; };
+		BBE3F62F1BEEE149004ED842 /* ViewHeaderProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3F62E1BEEE149004ED842 /* ViewHeaderProfile.swift */; };
+		BBE3F6311BEEE169004ED842 /* RSProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3F6301BEEE169004ED842 /* RSProfileTableViewController.swift */; };
+		BBE3F6341BEEE7BC004ED842 /* GoodsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3F6321BEEE7BC004ED842 /* GoodsCellTableViewCell.swift */; };
+		BBE3F6351BEEE7BC004ED842 /* GoodsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE3F6331BEEE7BC004ED842 /* GoodsCellTableViewCell.xib */; };
+		BBE3F6371BEEE829004ED842 /* RSListProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3F6361BEEE829004ED842 /* RSListProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +99,12 @@
 		BBE3F6261BEEBE09004ED842 /* ViewFooterDetailItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewFooterDetailItem.xib; sourceTree = "<group>"; };
 		BBE3F6281BEEC956004ED842 /* UIStoryboardInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardInstance.swift; sourceTree = "<group>"; };
 		BBE3F62A1BEECD26004ED842 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		BBE3F62C1BEEE103004ED842 /* ViewHeaderProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewHeaderProfile.xib; sourceTree = "<group>"; };
+		BBE3F62E1BEEE149004ED842 /* ViewHeaderProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHeaderProfile.swift; sourceTree = "<group>"; };
+		BBE3F6301BEEE169004ED842 /* RSProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSProfileTableViewController.swift; sourceTree = "<group>"; };
+		BBE3F6321BEEE7BC004ED842 /* GoodsCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCellTableViewCell.swift; sourceTree = "<group>"; };
+		BBE3F6331BEEE7BC004ED842 /* GoodsCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsCellTableViewCell.xib; sourceTree = "<group>"; };
+		BBE3F6361BEEE829004ED842 /* RSListProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSListProfileViewController.swift; sourceTree = "<group>"; };
 		C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +165,10 @@
 				BBE3F6221BEEB8CA004ED842 /* ViewDetailsHeader.swift */,
 				BBE3F6241BEEB8E6004ED842 /* ViewDetailsHeader.xib */,
 				BBE3F6261BEEBE09004ED842 /* ViewFooterDetailItem.xib */,
+				BBE3F62C1BEEE103004ED842 /* ViewHeaderProfile.xib */,
+				BBE3F62E1BEEE149004ED842 /* ViewHeaderProfile.swift */,
+				BBE3F6321BEEE7BC004ED842 /* GoodsCellTableViewCell.swift */,
+				BBE3F6331BEEE7BC004ED842 /* GoodsCellTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -220,6 +236,8 @@
 				875931B51BEE2ED700B857AD /* RSLoginController.swift */,
 				875931B71BEE2F0800B857AD /* RSRegisterController.swift */,
 				875931B91BEE32E900B857AD /* RSWelcomeController.swift */,
+				BBE3F6301BEEE169004ED842 /* RSProfileTableViewController.swift */,
+				BBE3F6361BEEE829004ED842 /* RSListProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -318,6 +336,7 @@
 				TargetAttributes = {
 					87702A6B1BBE324E00FD8713 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 44Q2J6374R;
 					};
 					87702A7F1BBE324E00FD8713 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -356,7 +375,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE3F62D1BEEE103004ED842 /* ViewHeaderProfile.xib in Resources */,
 				87702A7A1BBE324E00FD8713 /* LaunchScreen.storyboard in Resources */,
+				BBE3F6351BEEE7BC004ED842 /* GoodsCellTableViewCell.xib in Resources */,
 				87702A771BBE324E00FD8713 /* Assets.xcassets in Resources */,
 				BBE3F61F1BEE9DC2004ED842 /* RSHomePageCell.xib in Resources */,
 				BBE3F6151BEE9958004ED842 /* Main.storyboard in Resources */,
@@ -442,7 +463,9 @@
 				874EA9231BC4560700B67E63 /* RSHomePageCell.swift in Sources */,
 				BBC4596C1BEE55F600461A97 /* RSHomePageController.swift in Sources */,
 				875931B81BEE2F0800B857AD /* RSRegisterController.swift in Sources */,
+				BBE3F6341BEEE7BC004ED842 /* GoodsCellTableViewCell.swift in Sources */,
 				BBE3F6211BEE9E17004ED842 /* CreateNewController.swift in Sources */,
+				BBE3F6311BEEE169004ED842 /* RSProfileTableViewController.swift in Sources */,
 				875931B61BEE2ED700B857AD /* RSLoginController.swift in Sources */,
 				BBC459701BEE58ED00461A97 /* USer.swift in Sources */,
 				BBE3F6191BEE9B58004ED842 /* RSItemDetailTableViewController.swift in Sources */,
@@ -453,6 +476,8 @@
 				87702A701BBE324E00FD8713 /* AppDelegate.swift in Sources */,
 				BBE3F6231BEEB8CA004ED842 /* ViewDetailsHeader.swift in Sources */,
 				BB332FAC1BEDD78D0040114B /* ContactUser.swift in Sources */,
+				BBE3F62F1BEEE149004ED842 /* ViewHeaderProfile.swift in Sources */,
+				BBE3F6371BEEE829004ED842 /* RSListProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,7 +51,7 @@ class RSItemDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1)
         
         self.title = self.good.title
                 

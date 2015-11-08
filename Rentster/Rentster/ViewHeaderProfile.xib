@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ViewHeaderProfile" customModule="Rentster" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bicycle" translatesAutoresizingMaskIntoConstraints="NO" id="BBo-i5-HYk">
+                    <rect key="frame" x="153" y="50" width="100" height="100"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="3z3-oq-ATw"/>
+                        <constraint firstAttribute="width" constant="100" id="caG-8z-E8C"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="BBo-i5-HYk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5ij-l9-OMH"/>
+                <constraint firstItem="BBo-i5-HYk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="g0v-46-CKR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="BBo-i5-HYk" id="1Lt-F4-2u5"/>
+            </connections>
+            <point key="canvasLocation" x="306" y="304"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bicycle" width="585" height="414"/>
+    </resources>
+</document>

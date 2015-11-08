@@ -56,7 +56,8 @@ class RSHomePageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1)
+        self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.contentInset.top = -50
         
         self.segmentCategory.addTarget(self, action: "changeCategory", forControlEvents: UIControlEvents.ValueChanged)
