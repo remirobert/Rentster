@@ -8,7 +8,9 @@
 
 import UIKit
 import SnapKit
+import Parse
 import SAMTextView
+import MessageUI
 
 class RSItemDetailTableViewController: UITableViewController {
 
@@ -16,7 +18,6 @@ class RSItemDetailTableViewController: UITableViewController {
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var labelStart: UILabel!
     @IBOutlet weak var labelEnd: UILabel!
-    
 
     lazy var headerViewDetail: ViewDetailsHeader! = {
         let headerViewDetail = UINib(nibName: "ViewDetailsHeader", bundle: nil).instantiateWithOwner(self, options: nil).first as! ViewDetailsHeader
@@ -87,5 +88,41 @@ class RSItemDetailTableViewController: UITableViewController {
         }
     }
     
-    tableView(tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 && indexPath.row == 0 {
+            self.presentMailController()
+        }
+    }
+}
+
+extension RSItemDetailTableViewController: MFMailComposeViewControllerDelegate {
+    
+    func presentMailController() {
+        let mailController = MFMailComposeViewController()
+        mailController.setSubject("[R]enty : \(self.good.title)")
+        print("self.good : \(self.good.creator)")
+        
+        self.good.creator.fetchIfNeededInBackgroundWithBlock { (user: PFObject?, error: NSError?) -> Void in
+            if let user = user {
+                if let email = user["name"] as? String {
+                    mailController.setToRecipients([email])
+                }
+                mailController.setMessageBody("I am very interesting about your \(self.good.title)", isHTML: false)
+                mailController.mailComposeDelegate = self
+                self.presentViewController(mailController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        if result == MFMailComposeResultSent {
+            let alert = UIAlertView(title: "Message sent !", message: "Now wait for an aswer with the owner.", delegate: nil, cancelButtonTitle: "Ok")
+            alert.show()
+        }
+        else {
+            let alert = UIAlertView(title: "Message send failed !", message: "An error appeared when sending mail. Please check your connection and try again", delegate: nil, cancelButtonTitle: "Ok")
+            alert.show()
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

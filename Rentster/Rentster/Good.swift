@@ -32,6 +32,7 @@ class Good {
     var contact: ContactUser!
     var category: GoodCategorie!
     var image: UIImage?
+    var creator: PFUser!
     private var fileImage: PFFile?
 
     func fectchImage(blockCompletion: ((image:UIImage?)->())) {
@@ -105,6 +106,9 @@ class Good {
         }
         if let category = object["category"] as? Int {
             newGood.category = GoodCategorie.categoryFromIndex(category)
+        }
+        if let creator = object["creator"] as? PFUser {
+            newGood.creator = creator
         }
         return newGood
     }

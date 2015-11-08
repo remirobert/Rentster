@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Renty-->
+        <!--[R]enty-->
         <scene sceneID="AKz-8p-ELJ">
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="gQP-eF-hze" customClass="RSHomePageController" customModule="Rentster" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,7 +77,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Renty" id="lWp-8f-BCt">
+                    <navigationItem key="navigationItem" title="[R]enty" id="lWp-8f-BCt">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="A6k-oY-CaP">
                             <color key="tintColor" red="0.23137254900000001" green="0.3921568627" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
@@ -991,12 +991,14 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Renty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTb-v8-tE8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="[R]enty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTb-v8-tE8">
                                 <rect key="frame" x="201" y="115" width="209" height="113"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="e1R-mi-K6n"/>
-                                    <constraint firstAttribute="width" constant="209" id="gKZ-ih-bKU"/>
+                                    <constraint firstAttribute="width" constant="209" id="gKZ-ih-bKU">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="276"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="113" id="xxv-0X-8RW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="75"/>

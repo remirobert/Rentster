@@ -35,6 +35,7 @@
 		BBE3F6251BEEB8E6004ED842 /* ViewDetailsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE3F6241BEEB8E6004ED842 /* ViewDetailsHeader.xib */; };
 		BBE3F6271BEEBE09004ED842 /* ViewFooterDetailItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE3F6261BEEBE09004ED842 /* ViewFooterDetailItem.xib */; };
 		BBE3F6291BEEC956004ED842 /* UIStoryboardInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3F6281BEEC956004ED842 /* UIStoryboardInstance.swift */; };
+		BBE3F62B1BEECD26004ED842 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE3F62A1BEECD26004ED842 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		BBE3F6241BEEB8E6004ED842 /* ViewDetailsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewDetailsHeader.xib; sourceTree = "<group>"; };
 		BBE3F6261BEEBE09004ED842 /* ViewFooterDetailItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewFooterDetailItem.xib; sourceTree = "<group>"; };
 		BBE3F6281BEEC956004ED842 /* UIStoryboardInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardInstance.swift; sourceTree = "<group>"; };
+		BBE3F62A1BEECD26004ED842 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C23685EFC91BB1236AE51EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE3F62B1BEECD26004ED842 /* MessageUI.framework in Frameworks */,
 				061E1B6628FCAA28DBB02982 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +135,7 @@
 		47FAA448B9AD456DFAAACC79 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BBE3F62A1BEECD26004ED842 /* MessageUI.framework */,
 				72652D508BE7F85647DDFF22 /* Pods.framework */,
 			);
 			name = Frameworks;
